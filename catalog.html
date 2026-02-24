@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Eden's Cure — Product Catalogue 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --forest: #1F3D1A;
+    --gold: #C4853A;
+    --cream: #F5F0E6;
+    --brown: #5C3A1E;
+    --sage: #7A9E5F;
+    --black: #0D0B08;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #fff;
+    font-family: 'DM Sans', Arial, sans-serif;
+    color: var(--black);
+  }
+
+  /* ── PAGE SETUP ── */
+  .page {
+    width: 210mm; height: 297mm;
+    overflow: hidden; position: relative;
+    background: var(--cream);
+    page-break-after: always;
+  }
+
+  /* ── COVER PAGE ── */
+  .cover {
+    background: var(--forest);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+  }
+  .cover-bg {
+    position: absolute; inset: 0;
+  }
+  .cover-bg img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 30%;
+    opacity: 0.18;
+  }
+  .cover-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(31,61,26,0.3) 0%, rgba(31,61,26,0.7) 100%);
+  }
+  .cover-content {
+    position: relative; z-index: 2;
+    padding: 20mm;
+  }
+  .cover-eyebrow {
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 8pt; letter-spacing: 5px;
+    text-transform: uppercase; color: rgba(196,133,58,0.8);
+    margin-bottom: 14mm;
+  }
+  .cover-logo {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 62pt; font-weight: 300; line-height: 0.9;
+    color: var(--cream); margin-bottom: 6mm;
+  }
+  .cover-logo strong { font-weight: 700; color: #C4853A; }
+  .cover-tagline {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 14pt; font-style: italic; font-weight: 300;
+    color: rgba(245,240,230,0.65); margin-bottom: 16mm;
+    letter-spacing: 2px;
+  }
+  .cover-rule { width: 40mm; height: 0.5pt; background: rgba(196,133,58,0.4); margin: 0 auto 16mm; }
+  .cover-desc {
+    font-size: 11pt; font-weight: 300; line-height: 1.6;
+    color: rgba(245,240,230,0.7); max-width: 130mm;
+    margin: 0 auto 20mm;
+  }
+  .cover-year {
+    font-size: 8pt; letter-spacing: 4px; text-transform: uppercase;
+    color: rgba(196,133,58,0.5);
+  }
+
+  /* ── INNER PAGES ── */
+  .page-header {
+    background: var(--forest);
+    padding: 7mm 20mm 6mm;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .page-header .brand {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 14pt; font-weight: 600; color: var(--cream);
+    letter-spacing: 1px;
+  }
+  .page-header .doc-label {
+    font-size: 7pt; letter-spacing: 3px; text-transform: uppercase;
+    color: rgba(196,133,58,0.7);
+  }
+
+  .page-body {
+    padding: 10mm 20mm;
+    height: calc(297mm - 26mm - 18mm); /* minus header & footer */
+    overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+
+  .page-footer {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 18mm;
+    border-top: 0.5pt solid rgba(31,61,26,0.15);
+    padding: 0 20mm;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-contact {
+    font-size: 7pt; color: rgba(13,11,8,0.4); letter-spacing: 1px;
+  }
+  .footer-contact strong { color: var(--gold); }
+  .footer-qr { width: 14mm; height: 14mm; }
+  .footer-qr img { width: 100%; height: 100%; }
+
+  /* ── DEDICATION SECTION ── */
+  .dedication-section {
+    background: var(--forest);
+    padding: 12mm 20mm;
+    display: flex; gap: 12mm; align-items: center;
+    page-break-after: always;
+  }
+  .ded-portrait {
+    width: 45mm; height: 55mm;
+    border-radius: 3mm; overflow: hidden;
+    flex-shrink: 0;
+    border: 1.5pt solid rgba(196,133,58,0.4);
+  }
+  .ded-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .ded-text { flex: 1; }
+  .ded-label {
+    font-size: 7pt; letter-spacing: 4px; text-transform: uppercase;
+    color: rgba(196,133,58,0.7); margin-bottom: 5mm;
+  }
+  .ded-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 22pt; font-weight: 600; color: var(--cream);
+    line-height: 1.1; margin-bottom: 3mm;
+  }
+  .ded-title {
+    font-size: 8pt; letter-spacing: 3px; text-transform: uppercase;
+    color: rgba(196,133,58,0.6); margin-bottom: 6mm;
+  }
+  .ded-quote {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 13pt; font-style: italic; font-weight: 300;
+    color: rgba(245,240,230,0.75); line-height: 1.55;
+  }
+
+  /* ── PRODUCT CARD ── */
+  .product-section { margin-bottom: 8mm; }
+  .product-header {
+    display: flex; align-items: flex-start; gap: 8mm;
+    margin-bottom: 5mm; padding-bottom: 4mm;
+    border-bottom: 0.5pt solid rgba(31,61,26,0.12);
+  }
+  .product-img {
+    width: 30mm; height: 36mm;
+    object-fit: contain; flex-shrink: 0;
+  }
+  .product-info { flex: 1; }
+  .product-number {
+    font-size: 7pt; letter-spacing: 3px; text-transform: uppercase;
+    color: rgba(196,133,58,0.6); margin-bottom: 1.5mm;
+  }
+  .product-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 20pt; font-weight: 600; color: var(--forest);
+    line-height: 1; margin-bottom: 1.5mm;
+  }
+  .product-subtitle {
+    font-size: 8pt; color: rgba(13,11,8,0.55); margin-bottom: 3mm;
+    font-style: italic;
+  }
+  .product-price {
+    display: inline-block;
+    background: var(--gold); color: #fff;
+    font-size: 11pt; font-weight: 600;
+    padding: 2mm 6mm; border-radius: 1mm;
+    margin-bottom: 3mm;
+  }
+  .product-price span { font-size: 8pt; font-weight: 400; opacity: 0.8; }
+  .product-desc {
+    font-size: 9pt; line-height: 1.55;
+    color: rgba(13,11,8,0.7); margin-bottom: 3mm;
+  }
+  .ingredient-list {
+    font-size: 8pt; font-weight: 500;
+    color: var(--forest); letter-spacing: 0.5px;
+  }
+  .ingredient-list span { color: rgba(13,11,8,0.4); }
+
+  /* Benefits */
+  .benefits-row { display: flex; gap: 2mm; flex-wrap: wrap; margin-top: 2.5mm; }
+  .benefit-tag {
+    font-size: 7pt; letter-spacing: 1px;
+    border: 0.5pt solid rgba(31,61,26,0.25);
+    color: var(--forest); padding: 1mm 3mm;
+    border-radius: 0.5mm;
+  }
+
+  /* ── BACK COVER ── */
+  .back-cover {
+    background: var(--black);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+  }
+  .back-content { position: relative; z-index: 2; padding: 20mm; }
+  .back-qr {
+    width: 35mm; height: 35mm; margin: 0 auto 8mm;
+    padding: 3mm; background: var(--cream); border-radius: 2mm;
+  }
+  .back-qr img { width: 100%; height: 100%; }
+  .back-cta {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 26pt; font-weight: 300;
+    color: var(--cream); line-height: 1.2; margin-bottom: 5mm;
+  }
+  .back-cta strong { font-weight: 700; color: var(--gold); }
+  .back-url {
+    font-size: 9pt; letter-spacing: 3px; text-transform: uppercase;
+    color: rgba(196,133,58,0.7); margin-bottom: 10mm;
+  }
+  .back-contact {
+    font-size: 9pt; color: rgba(245,240,230,0.4);
+    line-height: 1.7;
+  }
+  .back-contact strong { color: rgba(245,240,230,0.65); }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════
+     COVER PAGE
+════════════════════════════════════ -->
+<div class="page cover">
+  <div class="cover-bg">
+    <img src="assets/images/hero-landscape.jpg" alt="">
+  </div>
+  <div class="cover-content">
+    <p class="cover-eyebrow">Ancient Wisdom · Modern Vitality · Natural Healing</p>
+    <div class="cover-logo">Eden's<br><strong>Cure</strong></div>
+    <p class="cover-tagline">"eat the cure"</p>
+    <div class="cover-rule"></div>
+    <p class="cover-desc">
+      Four ancient remedies, preserved in their purest form.
+      No additives. No compromise. Just the earth, doing what it has always done.
+    </p>
+    <p class="cover-year">Product Catalogue · 2026</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     PAGE 2 — DEDICATION + PRODUCTS 1&2
+════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="brand">Eden's Cure</span>
+    <span class="doc-label">Product Catalogue 2026</span>
+  </div>
+
+  <div class="page-body">
+
+    <!-- Dedication banner -->
+    <div class="dedication-section" style="margin: 0 -20mm 8mm; padding: 8mm 20mm;">
+      <div class="ded-portrait">
+        <img src="assets/images/abba-shomriel-portrait.jpg" alt="Abba Shomriel Ben Israel">
+      </div>
+      <div class="ded-text">
+        <p class="ded-label">In Honour</p>
+        <p class="ded-name">Abba Shomriel<br>Ben Israel</p>
+        <p class="ded-title">Herbalist &amp; Natural Healer</p>
+        <p class="ded-quote">"Whose unwavering love for people and dedication as a natural healer inspired every formula in this collection."</p>
+      </div>
+    </div>
+
+    <!-- Product 1 -->
+    <div class="product-section">
+      <div class="product-header">
+        <img src="assets/images/mockups/A01-hero-back-to-eden.png" alt="Back to Eden Powder" class="product-img">
+        <div class="product-info">
+          <p class="product-number">01 of 04</p>
+          <h2 class="product-name">Back to Eden<br>Powder</h2>
+          <p class="product-subtitle">Six Sacred Spices · 200g</p>
+          <div class="product-price">R165 <span>/ 200g</span></div>
+          <p class="product-desc">A potent blend of six of the earth's most studied healing spices — Cayenne, Fenugreek, Garlic, Ginger, Turmeric and Cinnamon. Formulated to support circulation, immunity, and vitality.</p>
+          <p class="ingredient-list"><span>Ingredients: </span>Cayenne Pepper, Fenugreek, Garlic, Ginger, Turmeric, Cinnamon</p>
+          <div class="benefits-row">
+            <span class="benefit-tag">Anti-inflammatory</span>
+            <span class="benefit-tag">Immunity</span>
+            <span class="benefit-tag">Circulation</span>
+            <span class="benefit-tag">Digestive</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-section">
+      <div class="product-header">
+        <img src="assets/images/mockups/A02-hero-moringa.png" alt="Moringa Powder" class="product-img">
+        <div class="product-info">
+          <p class="product-number">02 of 04</p>
+          <h2 class="product-name">Moringa<br>Leaf Powder</h2>
+          <p class="product-subtitle">The Miracle Tree · 100g</p>
+          <div class="product-price">R200 <span>/ 100g</span></div>
+          <p class="product-desc">95 nutrients. 46 antioxidants. Complete protein. Moringa oleifera — the Tree of Life — has nourished African communities for over 10,000 years. Nothing has surpassed it.</p>
+          <p class="ingredient-list"><span>Ingredients: </span>100% Moringa Oleifera Leaf (Dried &amp; Powdered)</p>
+          <div class="benefits-row">
+            <span class="benefit-tag">95 Nutrients</span>
+            <span class="benefit-tag">Complete Protein</span>
+            <span class="benefit-tag">Energy</span>
+            <span class="benefit-tag">Detox</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-contact"><strong>www.edenscurelife.co.za</strong> · info@edenscurelife.co.za · +27 81 429 8709</span>
+    <div class="footer-qr"><img src="assets/qr-website.png" alt="QR"></div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     PAGE 3 — PRODUCTS 3 & 4
+════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="brand">Eden's Cure</span>
+    <span class="doc-label">Product Catalogue 2026</span>
+  </div>
+
+  <div class="page-body">
+
+    <!-- Product 3 -->
+    <div class="product-section" style="margin-top:4mm;">
+      <div class="product-header">
+        <img src="assets/images/mockups/A03-hero-blackseed.png" alt="Black Seed" class="product-img">
+        <div class="product-info">
+          <p class="product-number">03 of 04</p>
+          <h2 class="product-name">Kammon<br>Black Seed</h2>
+          <p class="product-subtitle">Nigella Sativa · 50g</p>
+          <div class="product-price">R90 <span>/ 50g</span></div>
+          <p class="product-desc">Found in Tutankhamun's tomb. Mentioned in ancient scripture as "a cure for everything except death." The most researched natural compound on earth — Thymoquinone — lives here.</p>
+          <p class="ingredient-list"><span>Ingredients: </span>100% Nigella Sativa (Black Seed)</p>
+          <div class="benefits-row">
+            <span class="benefit-tag">Anti-inflammatory</span>
+            <span class="benefit-tag">Immune Support</span>
+            <span class="benefit-tag">Antifungal</span>
+            <span class="benefit-tag">Thymoquinone</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-section">
+      <div class="product-header">
+        <img src="assets/images/mockups/A04-hero-molasses-bottle.png" alt="Black Molasses" class="product-img">
+        <div class="product-info">
+          <p class="product-number">04 of 04</p>
+          <h2 class="product-name">Blackstrap<br>Molasses</h2>
+          <p class="product-subtitle">Mineral Dense · 500ml</p>
+          <div class="product-price">R85 <span>/ 500ml</span></div>
+          <p class="product-desc">Everything sugar refinement strips away — reclaimed. More calcium than milk. More iron than eggs. The concentrated minerals your body craves, in the form it was designed to absorb.</p>
+          <p class="ingredient-list"><span>Ingredients: </span>100% Pure Blackstrap Molasses (Unsulfured)</p>
+          <div class="benefits-row">
+            <span class="benefit-tag">Calcium</span>
+            <span class="benefit-tag">Iron</span>
+            <span class="benefit-tag">Magnesium</span>
+            <span class="benefit-tag">B Vitamins</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- How to order box -->
+    <div style="margin-top: auto; background: var(--forest); padding: 7mm 10mm; border-radius: 2mm; display:flex; gap:8mm; align-items:center;">
+      <div style="flex:1;">
+        <p style="font-size:7pt; letter-spacing:3px; text-transform:uppercase; color:rgba(196,133,58,0.7); margin-bottom:2mm;">How to Order</p>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:16pt; font-weight:600; color:var(--cream); line-height:1.1; margin-bottom:2.5mm;">Visit Our Online Store</p>
+        <p style="font-size:8pt; color:rgba(245,240,230,0.6); line-height:1.5;">
+          Order online at <strong style="color:#C4853A;">www.edenscurelife.co.za</strong><br>
+          WhatsApp: <strong style="color:rgba(245,240,230,0.8);">+27 81 429 8709</strong><br>
+          Email: <strong style="color:rgba(245,240,230,0.8);">info@edenscurelife.co.za</strong>
+        </p>
+      </div>
+      <div style="width:28mm; height:28mm; background:var(--cream); border-radius:1.5mm; padding:2mm;">
+        <img src="assets/qr-website.png" alt="Scan to visit" style="width:100%; height:100%;">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-contact"><strong>www.edenscurelife.co.za</strong> · info@edenscurelife.co.za · +27 81 429 8709</span>
+    <div class="footer-qr"><img src="assets/qr-website.png" alt="QR"></div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     BACK COVER
+════════════════════════════════════ -->
+<div class="page back-cover">
+  <div class="cover-bg">
+    <img src="assets/images/african-woman-wellness.jpg" alt="" style="opacity:0.12;">
+  </div>
+  <div class="back-content">
+    <div class="back-qr">
+      <img src="assets/qr-website.png" alt="Scan to shop">
+    </div>
+    <p class="back-cta">Scan to shop<br><strong>eat the cure</strong></p>
+    <p class="back-url">www.edenscurelife.co.za</p>
+    <div style="width:30mm; height:0.5pt; background:rgba(196,133,58,0.25); margin:0 auto 8mm;"></div>
+    <p class="back-contact">
+      <strong>info@edenscurelife.co.za</strong><br>
+      +27 81 429 8709<br>
+      17 Wattle Street, Florida Park, Roodepoort
+    </p>
+  </div>
+</div>
+
+</body>
+</html>

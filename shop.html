@@ -1,0 +1,2421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop — Eden's Cure | The Collection</title>
+  <meta name="description" content="Four remedies. Ancient origins. Zero compromise. Shop Eden's Cure botanical wellness products.">
+  <meta name="theme-color" content="#1F3D1A">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/favicon-32.png">
+
+  <!-- Open Graph / WhatsApp sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Eden's Cure">
+  <meta property="og:title" content="Shop Eden's Cure — The Collection">
+  <meta property="og:description" content="Four remedies. Ancient origins. Zero compromise. Black Seed, Moringa, Back to Eden, Blackstrap Molasses.">
+  <meta property="og:image" content="https://www.edenscurelife.co.za/assets/og-share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://www.edenscurelife.co.za/shop.html">
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shop Eden's Cure">
+  <meta name="twitter:image" content="https://www.edenscurelife.co.za/assets/og-share.jpg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+  <!-- Design System -->
+  <link rel="stylesheet" href="css/design-system.css">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+  <style>
+    /* ================================================================
+       SHOP PAGE — EDEN'S CURE
+       Aleph Creative-Hub | 2026
+    ================================================================ */
+
+    html { cursor: none; }
+
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: var(--font-sans);
+      font-weight: 300;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* ── Nav right actions ───────────────────────────────────── */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-cart-btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 100px;
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.25);
+      color: var(--cream);
+      font-family: var(--font-sans);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: all 280ms var(--ease-out);
+    }
+
+    .nav-cart-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      box-shadow: 0 0 24px rgba(201,168,76,0.12);
+    }
+
+    .nav-cart-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 18px;
+      height: 18px;
+      background: var(--gold-gradient);
+      color: var(--black);
+      border-radius: 50%;
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: scale(0);
+      transition: all 280ms var(--ease-spring);
+    }
+
+    .cart-badge.has-items {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ── Shop Hero ───────────────────────────────────────────── */
+    .shop-hero {
+      position: relative;
+      height: 45vh;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(180deg, #0A0806 0%, #1A120B 60%, #0A0806 100%);
+    }
+
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      pointer-events: none;
+    }
+
+    .hero-orb-gold {
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(201,168,76,0.18) 0%, transparent 70%);
+      top: -100px;
+      right: -80px;
+      animation: orbFloat1 12s ease-in-out infinite;
+    }
+
+    .hero-orb-sage {
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(74,124,89,0.15) 0%, transparent 70%);
+      bottom: -60px;
+      left: -60px;
+      animation: orbFloat2 15s ease-in-out infinite;
+    }
+
+    @keyframes orbFloat1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(-30px, 20px) scale(1.05); }
+      66%       { transform: translate(20px, -10px) scale(0.95); }
+    }
+    @keyframes orbFloat2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50%       { transform: translate(20px, -30px) scale(1.08); }
+    }
+
+    .hero-grain {
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      pointer-events: none;
+    }
+
+    .hero-rule {
+      position: absolute;
+      left: var(--safe-x);
+      right: var(--safe-x);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3) 20%, rgba(201,168,76,0.3) 80%, transparent);
+      bottom: 0;
+    }
+
+    .shop-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 var(--safe-x);
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .breadcrumb-item {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245,239,224,0.4);
+    }
+
+    .breadcrumb-item a { color: inherit; transition: color 200ms; }
+    .breadcrumb-item a:hover { color: var(--gold); }
+    .breadcrumb-item.current { color: var(--gold); }
+
+    .breadcrumb-sep {
+      width: 18px;
+      height: 1px;
+      background: rgba(245,239,224,0.2);
+    }
+
+    .shop-hero-headline {
+      font-family: var(--font-serif);
+      font-size: clamp(64px, 10vw, 120px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1;
+      color: var(--cream);
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .shop-hero-sub {
+      font-family: var(--font-sans);
+      font-size: clamp(13px, 1.2vw, 16px);
+      color: rgba(245,239,224,0.55);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    /* ── Filter Strip ────────────────────────────────────────── */
+    .filter-strip {
+      position: sticky;
+      top: 68px;
+      z-index: 90;
+      padding: 16px var(--safe-x);
+      background: rgba(10,8,6,0.82);
+      backdrop-filter: blur(24px) saturate(1.6);
+      -webkit-backdrop-filter: blur(24px) saturate(1.6);
+      border-bottom: 1px solid rgba(201,168,76,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .filter-pills {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 9px 22px;
+      border-radius: 100px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: 1px solid rgba(201,168,76,0.2);
+      background: transparent;
+      color: rgba(245,239,224,0.6);
+      transition: all 250ms var(--ease-out);
+      white-space: nowrap;
+    }
+
+    .filter-btn:hover {
+      border-color: rgba(201,168,76,0.45);
+      color: var(--cream);
+    }
+
+    .filter-btn.active {
+      background: var(--gold-gradient);
+      border-color: transparent;
+      color: var(--black);
+      font-weight: 600;
+      box-shadow: 0 4px 20px rgba(201,168,76,0.3);
+    }
+
+    .sort-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .sort-label {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: rgba(245,239,224,0.4);
+      white-space: nowrap;
+    }
+
+    .sort-select {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 8px;
+      color: var(--cream);
+      font-family: var(--font-sans);
+      font-size: 12px;
+      padding: 7px 28px 7px 12px;
+      cursor: pointer;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(201,168,76,0.6)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      transition: border-color 200ms;
+    }
+
+    .sort-select:hover, .sort-select:focus { border-color: rgba(201,168,76,0.35); }
+    .sort-select option { background: #1A120B; color: var(--cream); }
+
+    /* ── Shop Body ───────────────────────────────────────────── */
+    .shop-body {
+      padding: 60px var(--safe-x) 100px;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    /* ── Featured Banner ─────────────────────────────────────── */
+    .featured-banner {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      margin-bottom: 48px;
+      background: linear-gradient(135deg, #2D1F0D 0%, #1A120B 60%, #0A0806 100%);
+      border: 1px solid rgba(201,168,76,0.15);
+      min-height: 320px;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      cursor: pointer;
+      transition: box-shadow 400ms var(--ease-out), border-color 300ms;
+    }
+
+    .featured-banner:hover {
+      border-color: rgba(201,168,76,0.35);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.5), 0 0 60px rgba(201,168,76,0.08);
+    }
+
+    .featured-banner::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: var(--gold-gradient);
+      border-radius: 4px 0 0 4px;
+    }
+
+    .featured-banner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    }
+
+    .featured-stamp {
+      position: absolute;
+      top: 24px; right: 24px;
+      z-index: 3;
+    }
+
+    .featured-stamp-inner {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.4);
+      background: rgba(201,168,76,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      animation: stampSpin 20s linear infinite;
+    }
+
+    @keyframes stampSpin { to { transform: rotate(360deg); } }
+
+    .featured-stamp-text {
+      font-size: 8px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      line-height: 1.4;
+    }
+
+    .featured-img-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px 32px 40px;
+      overflow: hidden;
+    }
+
+    .featured-img-glow {
+      position: absolute;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .featured-img {
+      position: relative;
+      z-index: 1;
+      max-height: 280px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 600ms var(--ease-out);
+      filter: drop-shadow(0 30px 60px rgba(201,168,76,0.15));
+      animation: floatY 7s ease-in-out infinite;
+    }
+
+    .featured-banner:hover .featured-img {
+      transform: scale(1.05) translateY(-6px);
+      animation-play-state: paused;
+    }
+
+    .featured-info {
+      position: relative;
+      z-index: 2;
+      padding: 48px 48px 48px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-label {
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .featured-label-dot {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .featured-name {
+      font-family: var(--font-serif);
+      font-size: clamp(38px, 5vw, 64px);
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .featured-tagline {
+      font-size: 15px;
+      color: rgba(245,239,224,0.6);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      max-width: 340px;
+    }
+
+    .featured-ingredients {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+
+    .ingredient-pill {
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid rgba(201,168,76,0.2);
+      color: rgba(245,239,224,0.7);
+      background: rgba(201,168,76,0.06);
+    }
+
+    .featured-bottom {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .featured-price {
+      font-family: var(--font-serif);
+      font-size: 36px;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .featured-price-label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: rgba(245,239,224,0.35);
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    /* ── Products heading ────────────────────────────────────── */
+    .products-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .products-heading-text {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 400;
+      color: var(--cream);
+    }
+
+    .products-count {
+      font-size: 13px;
+      color: rgba(245,239,224,0.35);
+      letter-spacing: 0.1em;
+    }
+
+    /* ── Bento Product Grid ───────────────────────────────────── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .product-grid-row2 {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr 1fr;
+      gap: 20px;
+    }
+
+    /* ── Shop Product Card ────────────────────────────────────── */
+    .shop-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      background: rgba(26,18,11,0.8);
+      border: 1px solid rgba(201,168,76,0.1);
+      cursor: pointer;
+      transition:
+        transform 500ms var(--ease-out),
+        box-shadow 400ms var(--ease-out),
+        border-color 300ms,
+        opacity 320ms var(--ease-out);
+      display: flex;
+      flex-direction: column;
+      will-change: transform;
+      z-index: 0;
+    }
+
+    .shop-card:hover {
+      border-color: rgba(201,168,76,0.35);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.5), 0 0 60px rgba(201,168,76,0.08);
+    }
+
+    /* Shimmer sweep on hover */
+    .shop-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+      transition: left 700ms var(--ease-out);
+      pointer-events: none;
+      z-index: 5;
+    }
+    .shop-card:hover::before { left: 160%; }
+
+    /* Image zone */
+    .shop-card-img-zone {
+      position: relative;
+      flex-shrink: 0;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 80% 80% at 50% 55%, rgba(201,168,76,0.1) 0%, rgba(26,18,11,0) 70%),
+        #1A120B;
+    }
+
+    /* Kente stripe at bottom of image zone */
+    .shop-card-img-zone::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background-image: url('assets/textures/kente-07.jpg');
+      background-size: auto 3px;
+      background-repeat: repeat-x;
+      opacity: 0.45;
+    }
+
+    .shop-card.tall .shop-card-img-zone { height: 340px; }
+
+    .shop-card-glow {
+      position: absolute;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      filter: blur(50px);
+      pointer-events: none;
+      opacity: 0.8;
+      transition: opacity 400ms, transform 400ms;
+    }
+
+    .shop-card:hover .shop-card-glow { opacity: 1; transform: scale(1.2); }
+
+    .shop-card-img {
+      position: relative;
+      z-index: 1;
+      width: auto;
+      max-width: 86%;
+      max-height: 240px;
+      height: 90%;
+      object-fit: contain;
+      padding: 10px;
+      transition: transform 600ms var(--ease-out);
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+    }
+
+    .shop-card.tall .shop-card-img { max-height: 300px; }
+    .shop-card:hover .shop-card-img { transform: scale(1.09) translateY(-7px); }
+
+    /* Info zone */
+    .shop-card-info {
+      padding: 20px 24px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .shop-card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border: 1px solid;
+      margin-bottom: 12px;
+      align-self: flex-start;
+    }
+
+    .shop-card-name {
+      font-family: var(--font-serif);
+      font-size: clamp(22px, 2.2vw, 28px);
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 6px;
+      line-height: 1.1;
+    }
+
+    .shop-card-tagline {
+      font-size: 13px;
+      color: rgba(245,239,224,0.55);
+      line-height: 1.55;
+      margin-bottom: 14px;
+      flex: 1;
+    }
+
+    .shop-card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .shop-card-tag {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: rgba(245,239,224,0.4);
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .shop-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .shop-card-price {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .add-to-cart {
+      padding: 10px 20px;
+      border-radius: 100px;
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--cream);
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: all 250ms var(--ease-out);
+      white-space: nowrap;
+    }
+
+    .add-to-cart:hover {
+      background: var(--gold-gradient);
+      border-color: transparent;
+      color: var(--black);
+      font-weight: 600;
+      box-shadow: 0 4px 20px rgba(201,168,76,0.3);
+      transform: translateY(-1px);
+    }
+
+    /* Quick Add overlay */
+    .quick-add-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 4;
+      background: var(--gold-gradient);
+      color: var(--black);
+      padding: 16px 20px;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-align: center;
+      transform: translateY(100%);
+      transition: transform 350ms var(--ease-out);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+    }
+
+    .quick-add-overlay svg {
+      width: 14px; height: 14px;
+      stroke: var(--black);
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .shop-card:hover .quick-add-overlay { transform: translateY(0); }
+
+    /* ── Trust strip ─────────────────────────────────────────── */
+    .trust-strip {
+      margin-top: 72px;
+      padding: 56px var(--safe-x);
+      background: var(--brown-deep);
+      border-top: 1px solid rgba(201,168,76,0.08);
+      border-bottom: 1px solid rgba(201,168,76,0.08);
+    }
+
+    .trust-inner { max-width: 1440px; margin: 0 auto; }
+
+    .trust-header { text-align: center; margin-bottom: 40px; }
+
+    .trust-header-label {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 12px;
+    }
+
+    .trust-header-title {
+      font-family: var(--font-serif);
+      font-size: clamp(24px, 2.5vw, 36px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--cream);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .trust-card {
+      padding: 32px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,168,76,0.1);
+      text-align: center;
+      transition: all 300ms var(--ease-out);
+    }
+
+    .trust-card:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(201,168,76,0.2);
+      transform: translateY(-4px);
+    }
+
+    .trust-icon {
+      width: 52px; height: 52px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.2);
+      background: rgba(201,168,76,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .trust-icon svg {
+      width: 22px; height: 22px;
+      stroke: var(--gold);
+      stroke-width: 1.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .trust-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .trust-desc {
+      font-size: 13px;
+      color: rgba(245,239,224,0.5);
+      line-height: 1.6;
+    }
+
+    /* ── Cart Overlay + Sidebar ──────────────────────────────── */
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 199;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 300ms;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .cart-overlay.open { opacity: 1; pointer-events: all; }
+
+    .cart-sidebar {
+      position: fixed;
+      top: 0; right: 0; bottom: 0;
+      width: 380px;
+      background: rgba(26,18,11,0.97);
+      backdrop-filter: blur(24px) saturate(1.6);
+      -webkit-backdrop-filter: blur(24px) saturate(1.6);
+      border-left: 1px solid rgba(201,168,76,0.15);
+      z-index: 200;
+      transform: translateX(100%);
+      transition: transform 400ms var(--ease-out);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-sidebar.open { transform: translateX(0); }
+
+    .cart-header {
+      padding: 28px 28px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      flex-shrink: 0;
+    }
+
+    .cart-header-left { display: flex; align-items: baseline; gap: 10px; }
+
+    .cart-title {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--cream);
+    }
+
+    .cart-item-count-label { font-size: 12px; color: rgba(245,239,224,0.4); }
+
+    .cart-close {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.15);
+      background: transparent;
+      color: rgba(245,239,224,0.6);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 200ms;
+    }
+
+    .cart-close svg {
+      width: 14px; height: 14px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+    }
+
+    .cart-close:hover {
+      border-color: rgba(201,168,76,0.4);
+      color: var(--cream);
+      background: rgba(201,168,76,0.06);
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cart-items::-webkit-scrollbar { width: 3px; }
+    .cart-items::-webkit-scrollbar-track { background: transparent; }
+    .cart-items::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 2px; }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,168,76,0.08);
+      animation: slideInRight 300ms var(--ease-out) both;
+    }
+
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(20px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    .cart-item-img {
+      width: 64px; height: 64px;
+      object-fit: contain;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.04);
+      flex-shrink: 0;
+      padding: 6px;
+    }
+
+    .cart-item-details { flex: 1; min-width: 0; }
+
+    .cart-item-name {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cart-item-price { font-size: 13px; color: var(--gold); }
+
+    .cart-item-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .qty-btn {
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.2);
+      background: transparent;
+      color: var(--cream);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      line-height: 1;
+      transition: all 150ms;
+      font-family: var(--font-sans);
+    }
+
+    .qty-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+    .qty-display {
+      font-size: 14px;
+      color: var(--cream);
+      min-width: 18px;
+      text-align: center;
+    }
+
+    /* Empty cart */
+    .cart-empty {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 40px 28px;
+      text-align: center;
+    }
+
+    .cart-empty-icon {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cart-empty-icon svg {
+      width: 28px; height: 28px;
+      stroke: var(--gold-dim);
+      stroke-width: 1.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .cart-empty-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(245,239,224,0.5);
+    }
+
+    .cart-empty-sub { font-size: 13px; color: rgba(245,239,224,0.3); }
+
+    .cart-footer {
+      padding: 20px 28px 28px;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      flex-shrink: 0;
+    }
+
+    .cart-subtotal-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+
+    .cart-subtotal-label {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(245,239,224,0.4);
+    }
+
+    .cart-subtotal-amount {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .cart-shipping-note {
+      font-size: 11px;
+      color: rgba(245,239,224,0.3);
+      margin-bottom: 20px;
+      text-align: right;
+    }
+
+    .cart-shipping-free { color: var(--sage-light); }
+
+    .cart-checkout-btn {
+      width: 100%;
+      padding: 16px;
+      border-radius: 100px;
+      background: var(--gold-gradient);
+      border: none;
+      color: var(--black);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 250ms var(--ease-out);
+      box-shadow: 0 8px 32px rgba(201,168,76,0.3);
+    }
+
+    .cart-checkout-btn:hover {
+      box-shadow: 0 12px 48px rgba(201,168,76,0.5);
+      transform: translateY(-2px);
+    }
+
+    .cart-checkout-btn svg {
+      width: 16px; height: 16px;
+      stroke: var(--black);
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .cart-continue {
+      display: block;
+      text-align: center;
+      margin-top: 12px;
+      font-size: 12px;
+      color: rgba(245,239,224,0.35);
+      cursor: pointer;
+      letter-spacing: 0.08em;
+      transition: color 200ms;
+      background: none;
+      border: none;
+      width: 100%;
+      font-family: var(--font-sans);
+    }
+
+    .cart-continue:hover { color: var(--gold); }
+
+    /* ── Toast ───────────────────────────────────────────────── */
+    .toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: rgba(26,18,11,0.95);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 100px;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 300;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 300ms var(--ease-out);
+      font-size: 13px;
+      color: var(--cream);
+      white-space: nowrap;
+      backdrop-filter: blur(20px);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .toast-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--sage);
+      flex-shrink: 0;
+    }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+    @media (max-width: 1100px) {
+      .product-grid { grid-template-columns: 1fr 1fr; }
+      .product-grid-row2 { grid-template-columns: 1fr 1fr; }
+      .featured-banner { grid-template-columns: 1fr 1.2fr; }
+    }
+
+    @media (max-width: 900px) {
+      .product-grid,
+      .product-grid-row2 { grid-template-columns: 1fr 1fr; }
+      .featured-banner { grid-template-columns: 1fr; min-height: auto; }
+      .featured-img-wrap { padding: 32px; height: 260px; }
+      .featured-info { padding: 0 32px 40px; }
+      .cart-sidebar { width: 100%; max-width: 380px; }
+      .trust-grid { grid-template-columns: 1fr; gap: 12px; }
+    }
+
+    @media (max-width: 640px) {
+      .product-grid,
+      .product-grid-row2 { grid-template-columns: 1fr; }
+      .filter-strip { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .sort-wrap { align-self: flex-end; }
+      .shop-hero-headline { font-size: clamp(52px, 14vw, 80px); }
+    }
+
+    /* ── Light theme overrides ────────────────────────────── */
+    [data-theme="light"] .filter-strip {
+      background: rgba(245,240,230,0.96);
+      border-bottom-color: rgba(196,133,58,0.2);
+    }
+    [data-theme="light"] .filter-btn {
+      color: rgba(31,61,26,0.7);
+      border-color: rgba(31,61,26,0.2);
+    }
+    [data-theme="light"] .filter-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    [data-theme="light"] .filter-btn.active {
+      background: var(--gold);
+      color: #1F3D1A;
+      border-color: var(--gold);
+    }
+    [data-theme="light"] .sort-select {
+      background: rgba(255,255,255,0.85);
+      border-color: rgba(31,61,26,0.2);
+      color: var(--text-primary);
+    }
+    [data-theme="light"] .shop-card {
+      background: rgba(255,255,255,0.95);
+      border-color: rgba(196,133,58,0.18);
+      box-shadow: 0 4px 24px rgba(31,61,26,0.07);
+    }
+    [data-theme="light"] .shop-card:hover {
+      border-color: rgba(196,133,58,0.45);
+      box-shadow: 0 20px 60px rgba(31,61,26,0.12), 0 0 40px rgba(196,133,58,0.06);
+    }
+    [data-theme="light"] .shop-card-name {
+      color: #1F3D1A;
+    }
+    [data-theme="light"] .shop-card-tagline {
+      color: rgba(31,61,26,0.7);
+    }
+    [data-theme="light"] .shop-card-price {
+      color: #1F3D1A;
+    }
+    [data-theme="light"] .shop-card-badge {
+      background: rgba(31,61,26,0.07) !important;
+    }
+    [data-theme="light"] .shop-card-tag {
+      background: rgba(31,61,26,0.06);
+      border-color: rgba(31,61,26,0.15);
+      color: rgba(31,61,26,0.7);
+    }
+    [data-theme="light"] .shop-card-glow {
+      opacity: 0.4;
+    }
+    [data-theme="light"] .quick-add-overlay {
+      background: rgba(31,61,26,0.9);
+      color: var(--cream);
+    }
+    [data-theme="light"] .products-heading-text {
+      color: #1F3D1A;
+    }
+    [data-theme="light"] .products-count {
+      color: rgba(31,61,26,0.55);
+    }
+    [data-theme="light"] .featured-banner {
+      background: rgba(31,61,26,0.06);
+      border-color: rgba(31,61,26,0.12);
+    }
+    [data-theme="light"] .featured-name {
+      color: #1F3D1A;
+    }
+    [data-theme="light"] .featured-tagline {
+      color: rgba(31,61,26,0.7);
+    }
+    [data-theme="light"] .featured-price {
+      color: #1F3D1A;
+    }
+    [data-theme="light"] .featured-label {
+      color: rgba(31,61,26,0.6);
+    }
+    [data-theme="light"] .ingredient-pill {
+      background: rgba(31,61,26,0.08);
+      border-color: rgba(31,61,26,0.15);
+      color: rgba(31,61,26,0.8);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     NAV
+════════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/favicon.svg" class="nav-logo-icon" alt="" aria-hidden="true" width="30" height="30">
+    Eden's <span>Cure</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html" class="active">Shop</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun"  viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+
+    <button class="nav-cart-btn" id="open-cart" aria-label="Open cart">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      Cart
+      <span class="cart-badge" id="cart-count" aria-live="polite">0</span>
+    </button>
+
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="nav-mobile" id="nav-mobile" role="navigation" aria-label="Mobile menu">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+</div>
+
+<!-- ════════════════════════════════════════
+     SHOP HERO
+════════════════════════════════════════ -->
+<section class="shop-hero" aria-label="Shop hero">
+  <!-- Product lifestyle bg — atmospheric depth -->
+  <div style="position:absolute;inset:0;z-index:0;pointer-events:none;" aria-hidden="true">
+    <img src="assets/images/product-lifestyle.jpg" alt=""
+         style="width:100%;height:100%;object-fit:cover;object-position:center 40%;opacity:0.12;"
+         onerror="this.parentElement.style.display='none'">
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,8,6,0.5) 0%,rgba(10,8,6,0.3) 40%,rgba(10,8,6,0.7) 100%);"></div>
+  </div>
+  <div class="hero-orb hero-orb-gold" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-sage"  aria-hidden="true"></div>
+  <div class="hero-grain"              aria-hidden="true"></div>
+  <div class="hero-rule"               aria-hidden="true"></div>
+
+  <div class="shop-hero-content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <span class="breadcrumb-item"><a href="index.html">Home</a></span>
+      <span class="breadcrumb-sep" aria-hidden="true"></span>
+      <span class="breadcrumb-item current" aria-current="page">Shop</span>
+    </nav>
+
+    <h1 class="shop-hero-headline anim-fade-up">The Collection</h1>
+    <p class="shop-hero-sub anim-fade-up" style="animation-delay:150ms">
+      Four remedies &nbsp;&middot;&nbsp; Ancient origins &nbsp;&middot;&nbsp; Zero compromise
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     MARQUEE
+════════════════════════════════════════ -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Moringa Leaf Powder <span class="marquee-dot">&middot;</span></span>
+    <span class="marquee-item">Black Seed Oil <span class="marquee-dot">&middot;</span></span>
+    <span class="marquee-item">Black Molasses <span class="marquee-dot">&middot;</span></span>
+    <span class="marquee-item">Back to Eden Blend <span class="marquee-dot">&middot;</span></span>
+    <span class="marquee-item">Free Shipping over R500 <span class="marquee-dot">&middot;</span></span>
+    <span class="marquee-item">100% Natural <span class="marquee-dot">&middot;</span></span>
+    <span class="marquee-item">Ethically Sourced <span class="marquee-dot">&middot;</span></span>
+    <span class="marquee-item">Moringa Leaf Powder <span class="marquee-dot">&middot;</span></span>
+    <span class="marquee-item">Black Seed Oil <span class="marquee-dot">&middot;</span></span>
+    <span class="marquee-item">Black Molasses <span class="marquee-dot">&middot;</span></span>
+    <span class="marquee-item">Back to Eden Blend <span class="marquee-dot">&middot;</span></span>
+    <span class="marquee-item">Free Shipping over R500 <span class="marquee-dot">&middot;</span></span>
+    <span class="marquee-item">100% Natural <span class="marquee-dot">&middot;</span></span>
+    <span class="marquee-item">Ethically Sourced <span class="marquee-dot">&middot;</span></span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     FILTER STRIP
+════════════════════════════════════════ -->
+<div class="filter-strip" id="filter-strip" role="toolbar" aria-label="Filter products">
+  <div class="filter-pills" role="group" aria-label="Category filters">
+    <button class="filter-btn active" data-filter="all"    aria-pressed="true">All</button>
+    <button class="filter-btn"        data-filter="spices" aria-pressed="false">Spices</button>
+    <button class="filter-btn"        data-filter="greens" aria-pressed="false">Greens</button>
+    <button class="filter-btn"        data-filter="seeds"  aria-pressed="false">Seeds</button>
+    <button class="filter-btn"        data-filter="tonics" aria-pressed="false">Tonics</button>
+  </div>
+
+  <div class="sort-wrap">
+    <label for="sort-select" class="sort-label">Sort by</label>
+    <select class="sort-select" id="sort-select">
+      <option value="default">Featured</option>
+      <option value="price-asc">Price: Low to High</option>
+      <option value="price-desc">Price: High to Low</option>
+      <option value="name-asc">Name: A&ndash;Z</option>
+    </select>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SHOP BODY
+════════════════════════════════════════ -->
+<main class="shop-body" id="shop-body">
+
+  <!-- Featured Banner -->
+  <article
+    class="featured-banner"
+    id="featured-banner"
+    data-name="Back to Eden"
+    data-price="290"
+    data-img="assets/images/mockups/A01-hero-back-to-eden.png"
+    data-category="spices"
+    data-href="product-back-to-eden.html"
+    aria-label="Featured product: Back to Eden"
+    style="cursor:pointer"
+  >
+    <div class="featured-stamp" aria-hidden="true">
+      <div class="featured-stamp-inner">
+        <span class="featured-stamp-text">Best<br>Seller</span>
+      </div>
+    </div>
+
+    <div class="featured-img-wrap">
+      <div class="featured-img-glow" aria-hidden="true"></div>
+      <img
+        src="assets/images/mockups/A01-hero-back-to-eden.png"
+        alt="Back to Eden herbal blend — Eden's Cure bestseller"
+        class="featured-img"
+        loading="eager"
+      >
+    </div>
+
+    <div class="featured-info">
+      <div class="featured-label" aria-hidden="true">
+        <span class="featured-label-dot"></span>
+        Our Bestseller
+      </div>
+
+      <h2 class="featured-name">Back to Eden</h2>
+
+      <p class="featured-tagline">
+        A time-honoured blend of the earth's most potent botanical medicines.
+        One remedy. Centuries of wisdom.
+      </p>
+
+      <div class="featured-ingredients" aria-label="Key ingredients">
+        <span class="ingredient-pill">Moringa</span>
+        <span class="ingredient-pill">Black Seed</span>
+        <span class="ingredient-pill">Raw Honey</span>
+        <span class="ingredient-pill">Ginger Root</span>
+        <span class="ingredient-pill">Turmeric</span>
+      </div>
+
+      <div class="featured-bottom">
+        <div>
+          <div class="featured-price-label">From</div>
+          <div class="featured-price" aria-label="Price: R 290">R 290</div>
+        </div>
+        <button
+          class="btn btn-gold add-to-cart"
+          data-name="Back to Eden"
+          data-price="290"
+          data-img="assets/images/mockups/A01-hero-back-to-eden.png"
+          aria-label="Add Back to Eden to cart"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </article><!-- /featured-banner -->
+
+  <!-- Products heading -->
+  <div class="products-heading">
+    <h2 class="products-heading-text">All Products</h2>
+    <span class="products-count" id="visible-count" aria-live="polite">6 products</span>
+  </div>
+
+  <!-- ── GRID ROW 1: 1.6fr · 1fr · 1fr ── -->
+  <div class="product-grid" id="product-grid-row1">
+
+    <!-- Moringa — wide + tall -->
+    <article
+      class="shop-card tall reveal"
+      data-category="greens"
+      data-name="Moringa Leaf Powder"
+      data-price="280"
+      data-img="assets/images/mockups/A02-hero-moringa.png"
+      data-href="product-moringa.html"
+    >
+      <div class="shop-card-img-zone">
+        <div class="shop-card-glow"
+             style="background:radial-gradient(circle,rgba(74,124,89,0.25) 0%,transparent 70%)"
+             aria-hidden="true"></div>
+        <img
+          src="assets/images/mockups/A02-hero-moringa.png"
+          alt="Moringa Leaf Powder — 92 nutrients, 46 antioxidants"
+          class="shop-card-img"
+          loading="lazy"
+        >
+        <button
+          class="quick-add-overlay add-to-cart"
+          data-name="Moringa Leaf Powder"
+          data-price="280"
+          data-img="assets/images/mockups/A02-hero-moringa.png"
+          aria-label="Quick add Moringa Leaf Powder to cart"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Quick Add
+        </button>
+      </div>
+      <div class="shop-card-info">
+        <span class="shop-card-badge" style="color:#7FB08A;border-color:rgba(74,124,89,0.35);background:rgba(74,124,89,0.08)">Greens</span>
+        <h3 class="shop-card-name">Moringa<br>Leaf Powder</h3>
+        <p class="shop-card-tagline">The miracle tree. Packed with 92 nutrients, 46 antioxidants, and more vitamin C than oranges.</p>
+        <div class="shop-card-meta" aria-label="Key compounds">
+          <span class="shop-card-tag">Iron</span>
+          <span class="shop-card-tag">Calcium</span>
+          <span class="shop-card-tag">Protein</span>
+          <span class="shop-card-tag">Anti-inflammatory</span>
+        </div>
+        <div class="shop-card-footer">
+          <span class="shop-card-price" aria-label="Price: R 280">R 280</span>
+          <button class="add-to-cart"
+                  data-name="Moringa Leaf Powder"
+                  data-price="280"
+                  data-img="assets/images/mockups/A02-hero-moringa.png"
+                  aria-label="Add Moringa Leaf Powder to cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Black Seed -->
+    <article
+      class="shop-card reveal reveal-delay-1"
+      data-category="seeds"
+      data-name="Black Seed Oil"
+      data-price="310"
+      data-img="assets/images/mockups/A03-hero-blackseed.png"
+      data-href="product-black-seed.html"
+    >
+      <div class="shop-card-img-zone">
+        <div class="shop-card-glow"
+             style="background:radial-gradient(circle,rgba(139,106,62,0.25) 0%,transparent 70%)"
+             aria-hidden="true"></div>
+        <img
+          src="assets/images/mockups/A03-hero-blackseed.png"
+          alt="Black Seed Oil — cold-pressed Nigella sativa"
+          class="shop-card-img"
+          loading="lazy"
+        >
+        <button
+          class="quick-add-overlay add-to-cart"
+          data-name="Black Seed Oil"
+          data-price="310"
+          data-img="assets/images/mockups/A03-hero-blackseed.png"
+          aria-label="Quick add Black Seed Oil to cart"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Quick Add
+        </button>
+      </div>
+      <div class="shop-card-info">
+        <span class="shop-card-badge" style="color:#C9A84C;border-color:rgba(139,106,62,0.35);background:rgba(139,106,62,0.08)">Seeds</span>
+        <h3 class="shop-card-name">Black Seed Oil</h3>
+        <p class="shop-card-tagline">Nigella sativa — the remedy for everything except death. Cold-pressed for maximum potency.</p>
+        <div class="shop-card-meta">
+          <span class="shop-card-tag">Thymoquinone</span>
+          <span class="shop-card-tag">Immune</span>
+          <span class="shop-card-tag">Respiratory</span>
+        </div>
+        <div class="shop-card-footer">
+          <span class="shop-card-price" aria-label="Price: R 310">R 310</span>
+          <button class="add-to-cart"
+                  data-name="Black Seed Oil"
+                  data-price="310"
+                  data-img="assets/images/mockups/A03-hero-blackseed.png"
+                  aria-label="Add Black Seed Oil to cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Black Molasses -->
+    <article
+      class="shop-card reveal reveal-delay-2"
+      data-category="tonics"
+      data-name="Black Molasses Tonic"
+      data-price="260"
+      data-img="assets/images/mockups/A04-hero-molasses-bottle.png"
+      data-href="product-molasses.html"
+    >
+      <div class="shop-card-img-zone">
+        <div class="shop-card-glow"
+             style="background:radial-gradient(circle,rgba(123,78,45,0.3) 0%,transparent 70%)"
+             aria-hidden="true"></div>
+        <img
+          src="assets/images/mockups/A04-hero-molasses-bottle.png"
+          alt="Black Molasses Tonic — iron-rich blackstrap"
+          class="shop-card-img"
+          loading="lazy"
+        >
+        <button
+          class="quick-add-overlay add-to-cart"
+          data-name="Black Molasses Tonic"
+          data-price="260"
+          data-img="assets/images/mockups/A04-hero-molasses-bottle.png"
+          aria-label="Quick add Black Molasses Tonic to cart"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Quick Add
+        </button>
+      </div>
+      <div class="shop-card-info">
+        <span class="shop-card-badge" style="color:#C8A880;border-color:rgba(123,78,45,0.35);background:rgba(123,78,45,0.1)">Tonics</span>
+        <h3 class="shop-card-name">Black Molasses Tonic</h3>
+        <p class="shop-card-tagline">Iron-rich blackstrap molasses. Natural energy, deep nourishment from root to crown.</p>
+        <div class="shop-card-meta">
+          <span class="shop-card-tag">Iron</span>
+          <span class="shop-card-tag">Magnesium</span>
+          <span class="shop-card-tag">B6</span>
+        </div>
+        <div class="shop-card-footer">
+          <span class="shop-card-price" aria-label="Price: R 260">R 260</span>
+          <button class="add-to-cart"
+                  data-name="Black Molasses Tonic"
+                  data-price="260"
+                  data-img="assets/images/mockups/A04-hero-molasses-bottle.png"
+                  aria-label="Add Black Molasses Tonic to cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </article>
+
+  </div><!-- /row1 -->
+
+  <!-- ── GRID ROW 2: 1fr · 1.6fr · 1fr ── -->
+  <div class="product-grid-row2" id="product-grid-row2">
+
+    <!-- Moringa alt view -->
+    <article
+      class="shop-card reveal"
+      data-category="greens"
+      data-name="Moringa Leaf Powder"
+      data-price="280"
+      data-img="assets/images/mockups/B02-alt-moringa.png"
+      data-href="product-moringa.html"
+    >
+      <div class="shop-card-img-zone">
+        <div class="shop-card-glow"
+             style="background:radial-gradient(circle,rgba(74,124,89,0.2) 0%,transparent 70%)"
+             aria-hidden="true"></div>
+        <img
+          src="assets/images/mockups/B02-alt-moringa.png"
+          alt="Moringa Leaf Powder — alternate product view"
+          class="shop-card-img"
+          loading="lazy"
+        >
+        <button
+          class="quick-add-overlay add-to-cart"
+          data-name="Moringa Leaf Powder"
+          data-price="280"
+          data-img="assets/images/mockups/B02-alt-moringa.png"
+          aria-label="Quick add Moringa to cart"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Quick Add
+        </button>
+      </div>
+      <div class="shop-card-info">
+        <span class="shop-card-badge" style="color:#7FB08A;border-color:rgba(74,124,89,0.35);background:rgba(74,124,89,0.08)">Greens</span>
+        <h3 class="shop-card-name">Moringa</h3>
+        <p class="shop-card-tagline">100% pure, sun-dried moringa leaf. No fillers, no additives. Just the tree.</p>
+        <div class="shop-card-footer">
+          <span class="shop-card-price" aria-label="Price: R 280">R 280</span>
+          <button class="add-to-cart"
+                  data-name="Moringa Leaf Powder"
+                  data-price="280"
+                  data-img="assets/images/mockups/B02-alt-moringa.png"
+                  aria-label="Add Moringa to cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Back to Eden — wide centre slot -->
+    <article
+      class="shop-card tall reveal reveal-delay-1"
+      data-category="spices"
+      data-name="Back to Eden"
+      data-price="290"
+      data-img="assets/images/mockups/B01-alt-back-to-eden.png"
+      data-href="product-back-to-eden.html"
+    >
+      <div class="shop-card-img-zone" style="height:300px">
+        <div class="shop-card-glow"
+             style="background:radial-gradient(circle,rgba(201,168,76,0.22) 0%,transparent 70%)"
+             aria-hidden="true"></div>
+        <img
+          src="assets/images/mockups/B01-alt-back-to-eden.png"
+          alt="Back to Eden blend — alternate view"
+          class="shop-card-img"
+          style="max-height:250px"
+          loading="lazy"
+        >
+        <button
+          class="quick-add-overlay add-to-cart"
+          data-name="Back to Eden"
+          data-price="290"
+          data-img="assets/images/mockups/B01-alt-back-to-eden.png"
+          aria-label="Quick add Back to Eden to cart"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Quick Add
+        </button>
+      </div>
+      <div class="shop-card-info">
+        <span class="shop-card-badge" style="color:#E8C97A;border-color:rgba(201,168,76,0.35);background:rgba(201,168,76,0.08)">Spices &middot; Bestseller</span>
+        <h3 class="shop-card-name">Back to Eden</h3>
+        <p class="shop-card-tagline">The signature blend. Five ancient superfoods in precise, therapeutic ratios. The foundation of the Eden's Cure philosophy.</p>
+        <div class="shop-card-meta">
+          <span class="shop-card-tag">Moringa</span>
+          <span class="shop-card-tag">Black Seed</span>
+          <span class="shop-card-tag">Ginger</span>
+          <span class="shop-card-tag">Turmeric</span>
+          <span class="shop-card-tag">Raw Honey</span>
+        </div>
+        <div class="shop-card-footer">
+          <span class="shop-card-price" aria-label="Price: R 290">R 290</span>
+          <button class="add-to-cart"
+                  data-name="Back to Eden"
+                  data-price="290"
+                  data-img="assets/images/mockups/B01-alt-back-to-eden.png"
+                  aria-label="Add Back to Eden to cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Black Seed alt -->
+    <article
+      class="shop-card reveal reveal-delay-2"
+      data-category="seeds"
+      data-name="Black Seed Oil"
+      data-price="310"
+      data-img="assets/images/mockups/B03-alt-blackseed.png"
+      data-href="product-black-seed.html"
+    >
+      <div class="shop-card-img-zone">
+        <div class="shop-card-glow"
+             style="background:radial-gradient(circle,rgba(139,106,62,0.22) 0%,transparent 70%)"
+             aria-hidden="true"></div>
+        <img
+          src="assets/images/mockups/B03-alt-blackseed.png"
+          alt="Black Seed Oil — alternate product view"
+          class="shop-card-img"
+          loading="lazy"
+        >
+        <button
+          class="quick-add-overlay add-to-cart"
+          data-name="Black Seed Oil"
+          data-price="310"
+          data-img="assets/images/mockups/B03-alt-blackseed.png"
+          aria-label="Quick add Black Seed Oil to cart"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Quick Add
+        </button>
+      </div>
+      <div class="shop-card-info">
+        <span class="shop-card-badge" style="color:#C9A84C;border-color:rgba(139,106,62,0.35);background:rgba(139,106,62,0.08)">Seeds</span>
+        <h3 class="shop-card-name">Black Seed</h3>
+        <p class="shop-card-tagline">Raw, unfiltered. A prophetic medicine used for over 3,000 years across five continents.</p>
+        <div class="shop-card-footer">
+          <span class="shop-card-price" aria-label="Price: R 310">R 310</span>
+          <button class="add-to-cart"
+                  data-name="Black Seed Oil"
+                  data-price="310"
+                  data-img="assets/images/mockups/B03-alt-blackseed.png"
+                  aria-label="Add Black Seed Oil to cart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </article>
+
+  </div><!-- /row2 -->
+
+</main><!-- /shop-body -->
+
+<!-- ════════════════════════════════════════
+     TRUST STRIP
+════════════════════════════════════════ -->
+<section class="trust-strip" aria-labelledby="trust-heading">
+  <div class="trust-inner">
+    <div class="trust-header reveal">
+      <p class="trust-header-label">The Eden Pledge</p>
+      <h2 class="trust-header-title" id="trust-heading">Why shop with us</h2>
+    </div>
+
+    <div class="trust-grid">
+
+      <div class="trust-card reveal">
+        <div class="trust-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <rect x="1" y="3" width="15" height="13" rx="1"/>
+            <path d="M16 8h4l3 4v4h-7V8z"/>
+            <circle cx="5.5" cy="18.5" r="2.5"/>
+            <circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
+        <h3 class="trust-title">Free Shipping</h3>
+        <p class="trust-desc">Complimentary delivery on all orders over R500. Nationwide door-to-door via our trusted courier partners.</p>
+      </div>
+
+      <div class="trust-card reveal reveal-delay-1">
+        <div class="trust-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3 class="trust-title">Secure Payment</h3>
+        <p class="trust-desc">256-bit SSL encryption on every transaction. EFT, card, and mobile wallets accepted. Your data is never stored.</p>
+      </div>
+
+      <div class="trust-card reveal reveal-delay-2">
+        <div class="trust-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <polyline points="23 4 23 10 17 10"/>
+            <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/>
+          </svg>
+        </div>
+        <h3 class="trust-title">30-Day Guarantee</h3>
+        <p class="trust-desc">Not completely satisfied? Return any product within 30 days, no questions asked. We stand behind every remedy.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand" style="display:flex;align-items:center;gap:10px;">
+        <img src="assets/favicon.svg" class="footer-logo-icon" alt="" aria-hidden="true" width="32" height="32">
+        <span>Eden's <span>Cure</span></span>
+      </div>
+      <p class="footer-tagline">
+        Ancient botanical wisdom, responsibly sourced and carefully prepared.
+        Healing that honours the earth and those who walk it.
+      </p>
+    </div>
+    <div>
+      <p class="footer-heading">Navigate</p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Products</p>
+      <ul class="footer-links">
+        <li><a href="product-back-to-eden.html">Back to Eden</a></li>
+        <li><a href="product-moringa.html">Moringa Powder</a></li>
+        <li><a href="product-black-seed.html">Black Seed</a></li>
+        <li><a href="product-molasses.html">Black Molasses</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Connect</p>
+      <ul class="footer-links">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">WhatsApp</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="mailto:info@edenscure.co.za">Email Us</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; 2026 Eden's Cure. All rights reserved. Crafted by Aleph Creative-Hub.</p>
+    <div class="footer-socials">
+      <a href="#" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="Facebook">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="WhatsApp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ TRIBUTE ══════════════════════════════════════════ -->
+<section class="tribute-section" aria-label="Dedication to Abba Shomriel Ben Israel">
+  <div class="tribute-inner">
+    <div class="tribute-portrait-wrap">
+      <div class="tribute-portrait-ring"></div>
+      <div class="tribute-portrait">
+        <img src="assets/images/abba-shomriel-portrait.jpg" alt="Abba Shomriel Ben Israel — Herbalist and Natural Healer" loading="lazy">
+      </div>
+    </div>
+    <div class="tribute-text">
+      <p class="tribute-eyebrow">In Loving Memory</p>
+      <h2 class="tribute-name">Abba Shomriel<br>Ben Israel</h2>
+      <p class="tribute-title">Herbalist &amp; Natural Healer</p>
+      <div class="tribute-rule"></div>
+      <blockquote class="tribute-quote">
+        Whose passion for natural healing and deep love for people inspired the development of every product in this collection.
+      </blockquote>
+      <p class="tribute-sub">This collection exists because of him. Every product carries his spirit.</p>
+      <!-- Download buttons -->
+      <div class="tribute-downloads">
+        <a href="assets/docs/catalog-2026-web.pdf" download="EdensCure-Catalog-2026.pdf" class="tribute-dl-btn" aria-label="Download product catalog PDF">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download Catalog
+        </a>
+        <a href="assets/docs/price-list-2026-web.pdf" download="EdensCure-PriceList-2026.pdf" class="tribute-dl-btn" aria-label="Download price list PDF">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Price List
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     CART OVERLAY + SIDEBAR
+════════════════════════════════════════ -->
+<div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+
+<aside class="cart-sidebar" id="cart-sidebar" aria-label="Shopping cart" aria-modal="true" role="dialog">
+
+  <div class="cart-header">
+    <div class="cart-header-left">
+      <h2 class="cart-title">Your Cart</h2>
+      <span class="cart-item-count-label" id="cart-item-count-sidebar" aria-live="polite">0 items</span>
+    </div>
+    <button class="cart-close" id="cart-close" aria-label="Close cart">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="cart-empty" id="cart-empty" role="status">
+    <div class="cart-empty-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+    </div>
+    <p class="cart-empty-title">Your cart is empty</p>
+    <p class="cart-empty-sub">Add a remedy to begin your journey</p>
+  </div>
+
+  <div class="cart-items" id="cart-items" style="display:none" aria-live="polite" aria-label="Cart items"></div>
+
+  <div class="cart-footer" id="cart-footer" style="display:none">
+    <div class="cart-subtotal-row">
+      <span class="cart-subtotal-label">Subtotal</span>
+      <span class="cart-subtotal-amount" id="cart-total" aria-live="polite">R 0</span>
+    </div>
+    <p class="cart-shipping-note" id="shipping-note" aria-live="polite">Add R 500 more for free shipping</p>
+
+    <button class="cart-checkout-btn" id="cart-checkout" aria-label="Proceed to checkout">
+      Proceed to Checkout
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <line x1="5" y1="12" x2="19" y2="12"/>
+        <polyline points="12 5 19 12 12 19"/>
+      </svg>
+    </button>
+    <button class="cart-continue" id="cart-continue-btn" type="button">
+      Continue shopping
+    </button>
+  </div>
+</aside>
+
+<!-- Toast notification -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <div class="toast-dot" aria-hidden="true"></div>
+  <span id="toast-msg">Added to cart</span>
+</div>
+
+<!-- ════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════ -->
+<script src="js/theme.js"></script>
+<script src="js/cursor.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── Lenis smooth scroll ───────────────────────────────── */
+  var lenis;
+  if (typeof Lenis !== 'undefined') {
+    lenis = new Lenis({ lerp: 0.08, smooth: true });
+    function rafTick(time) { lenis.raf(time); requestAnimationFrame(rafTick); }
+    requestAnimationFrame(rafTick);
+  }
+
+  /* ── Nav scroll behaviour ──────────────────────────────── */
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function () {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  /* ── Mobile hamburger ──────────────────────────────────── */
+  var hamburger  = document.getElementById('hamburger');
+  var navMobile  = document.getElementById('nav-mobile');
+
+  hamburger.addEventListener('click', function () {
+    this.classList.toggle('open');
+    navMobile.classList.toggle('open');
+  });
+
+  /* ── Cart state (plain object, no innerHTML) ───────────── */
+  // cartItems: Map keyed by product name
+  var cartItems   = {};   // { [name]: { name, price, img, qty } }
+  var cartSubtotal = 0;
+
+  var cartSidebar       = document.getElementById('cart-sidebar');
+  var cartOverlay       = document.getElementById('cart-overlay');
+  var cartEmpty         = document.getElementById('cart-empty');
+  var cartItemsEl       = document.getElementById('cart-items');
+  var cartFooterEl      = document.getElementById('cart-footer');
+  var cartTotalEl       = document.getElementById('cart-total');
+  var cartCountBadge    = document.getElementById('cart-count');
+  var cartCountSidebar  = document.getElementById('cart-item-count-sidebar');
+  var shippingNoteEl    = document.getElementById('shipping-note');
+  var toast             = document.getElementById('toast');
+  var toastMsg          = document.getElementById('toast-msg');
+  var toastTimeout;
+
+  function openCart() {
+    cartSidebar.classList.add('open');
+    cartOverlay.classList.add('open');
+    cartOverlay.removeAttribute('aria-hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCart() {
+    cartSidebar.classList.remove('open');
+    cartOverlay.classList.add('open');
+    cartOverlay.setAttribute('aria-hidden', 'true');
+    cartOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function showToast(productName) {
+    toastMsg.textContent = productName + ' added to cart';
+    toast.classList.add('show');
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(function () { toast.classList.remove('show'); }, 2600);
+  }
+
+  function getTotalQty() {
+    return Object.keys(cartItems).reduce(function (acc, key) {
+      return acc + cartItems[key].qty;
+    }, 0);
+  }
+
+  /* Build cart item DOM node (no innerHTML) */
+  function buildCartItemNode(item) {
+    var wrap = document.createElement('div');
+    wrap.className = 'cart-item';
+
+    // Thumbnail
+    var img = document.createElement('img');
+    img.src = item.img;
+    img.alt = item.name;
+    img.className = 'cart-item-img';
+    img.loading = 'lazy';
+    wrap.appendChild(img);
+
+    // Details
+    var details = document.createElement('div');
+    details.className = 'cart-item-details';
+
+    var nameEl = document.createElement('div');
+    nameEl.className = 'cart-item-name';
+    nameEl.textContent = item.name;
+    details.appendChild(nameEl);
+
+    var priceEl = document.createElement('div');
+    priceEl.className = 'cart-item-price';
+    priceEl.textContent = 'R ' + item.price + ' \u00d7 ' + item.qty + ' = R ' + (item.price * item.qty);
+    details.appendChild(priceEl);
+
+    wrap.appendChild(details);
+
+    // Controls
+    var controls = document.createElement('div');
+    controls.className = 'cart-item-controls';
+
+    var decBtn = document.createElement('button');
+    decBtn.className = 'qty-btn';
+    decBtn.setAttribute('aria-label', 'Remove one ' + item.name);
+    decBtn.textContent = '\u2212';
+    decBtn.addEventListener('click', function () { adjustQty(item.name, -1); });
+    controls.appendChild(decBtn);
+
+    var qtyDisplay = document.createElement('span');
+    qtyDisplay.className = 'qty-display';
+    qtyDisplay.textContent = item.qty;
+    controls.appendChild(qtyDisplay);
+
+    var incBtn = document.createElement('button');
+    incBtn.className = 'qty-btn';
+    incBtn.setAttribute('aria-label', 'Add one ' + item.name);
+    incBtn.textContent = '+';
+    incBtn.addEventListener('click', function () { adjustQty(item.name, 1); });
+    controls.appendChild(incBtn);
+
+    wrap.appendChild(controls);
+
+    return wrap;
+  }
+
+  function adjustQty(name, delta) {
+    if (!cartItems[name]) return;
+    cartItems[name].qty += delta;
+    if (cartItems[name].qty <= 0) delete cartItems[name];
+    renderCart();
+  }
+
+  function renderCart() {
+    var totalQty = getTotalQty();
+
+    // Nav badge
+    cartCountBadge.textContent = totalQty;
+    cartCountBadge.classList.toggle('has-items', totalQty > 0);
+
+    // Sidebar count
+    cartCountSidebar.textContent = totalQty + (totalQty === 1 ? ' item' : ' items');
+
+    // Subtotal
+    cartSubtotal = Object.keys(cartItems).reduce(function (acc, key) {
+      var it = cartItems[key];
+      return acc + it.price * it.qty;
+    }, 0);
+    cartTotalEl.textContent = 'R ' + cartSubtotal;
+
+    // Shipping note
+    var remaining = Math.max(0, 500 - cartSubtotal);
+    if (remaining === 0) {
+      shippingNoteEl.textContent = 'Free shipping unlocked!';
+      shippingNoteEl.style.color = 'var(--sage-light)';
+    } else {
+      shippingNoteEl.textContent = 'Add R ' + remaining + ' more for free shipping';
+      shippingNoteEl.style.color = '';
+    }
+
+    // Show empty or items
+    if (totalQty === 0) {
+      cartEmpty.style.display = 'flex';
+      cartItemsEl.style.display = 'none';
+      cartFooterEl.style.display = 'none';
+    } else {
+      cartEmpty.style.display = 'none';
+      cartItemsEl.style.display = 'flex';
+      cartFooterEl.style.display = 'block';
+
+      // Rebuild items list using DOM nodes
+      while (cartItemsEl.firstChild) { cartItemsEl.removeChild(cartItemsEl.firstChild); }
+      Object.keys(cartItems).forEach(function (key) {
+        cartItemsEl.appendChild(buildCartItemNode(cartItems[key]));
+      });
+    }
+  }
+
+  /* ── Add to cart (all buttons & quick-add overlays) ──── */
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.add-to-cart');
+    if (!btn) return;
+    e.stopPropagation();
+
+    // Read product data from button, fall back to parent card
+    var card    = btn.closest('[data-name]');
+    var name    = btn.dataset.name  || (card && card.dataset.name)  || '';
+    var price   = parseInt(btn.dataset.price  || (card && card.dataset.price)  || '0', 10);
+    var imgSrc  = btn.dataset.img   || (card && card.dataset.img)   || '';
+
+    if (!name || isNaN(price) || price <= 0) return;
+
+    if (cartItems[name]) {
+      cartItems[name].qty++;
+    } else {
+      cartItems[name] = { name: name, price: price, img: imgSrc, qty: 1 };
+    }
+
+    renderCart();
+    openCart();
+    showToast(name);
+
+    // Visual feedback on regular (non-overlay) buttons
+    if (btn.tagName === 'BUTTON' && !btn.classList.contains('quick-add-overlay')) {
+      var origText   = btn.textContent.trim();
+      var origBg     = btn.style.background;
+      var origBorder = btn.style.borderColor;
+      var origColor  = btn.style.color;
+      btn.textContent     = 'Added!';
+      btn.style.background    = 'var(--sage)';
+      btn.style.borderColor   = 'transparent';
+      btn.style.color         = '#fff';
+      setTimeout(function () {
+        btn.textContent     = origText;
+        btn.style.background    = origBg;
+        btn.style.borderColor   = origBorder;
+        btn.style.color         = origColor;
+      }, 1800);
+    }
+  });
+
+  /* ── Cart open / close ───────────────────────────────── */
+  document.getElementById('open-cart').addEventListener('click', openCart);
+  document.getElementById('cart-close').addEventListener('click', closeCart);
+  document.getElementById('cart-overlay').addEventListener('click', closeCart);
+  document.getElementById('cart-continue-btn').addEventListener('click', closeCart);
+
+  document.getElementById('cart-checkout').addEventListener('click', function () {
+    if (getTotalQty() === 0) return;
+    this.textContent = 'Coming soon\u2026';
+    var btn = this;
+    setTimeout(function () {
+      btn.textContent = 'Proceed to Checkout';
+      // Re-add arrow SVG
+      var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('viewBox', '0 0 24 24');
+      svg.setAttribute('aria-hidden', 'true');
+      svg.style.width = '16px';
+      svg.style.height = '16px';
+      svg.style.stroke = 'var(--black)';
+      svg.style.strokeWidth = '2.5';
+      svg.style.fill = 'none';
+      svg.style.strokeLinecap = 'round';
+      svg.style.strokeLinejoin = 'round';
+      var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', '5'); line.setAttribute('y1', '12');
+      line.setAttribute('x2', '19'); line.setAttribute('y2', '12');
+      var poly = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+      poly.setAttribute('points', '12 5 19 12 12 19');
+      svg.appendChild(line);
+      svg.appendChild(poly);
+      btn.appendChild(svg);
+    }, 1500);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && cartSidebar.classList.contains('open')) closeCart();
+  });
+
+  /* ── Filter + Sort ───────────────────────────────────── */
+  var filterBtns    = document.querySelectorAll('.filter-btn');
+  var allCards      = document.querySelectorAll('.shop-card[data-category]');
+  var visibleCount  = document.getElementById('visible-count');
+  var currentFilter = 'all';
+
+  function applyFilter() {
+    var shown = 0;
+    allCards.forEach(function (card) {
+      var show = currentFilter === 'all' || card.dataset.category === currentFilter;
+      card.style.opacity       = show ? '1' : '0.18';
+      card.style.transform     = show ? '' : 'scale(0.96)';
+      card.style.pointerEvents = show ? 'auto' : 'none';
+      card.setAttribute('aria-hidden', show ? 'false' : 'true');
+      if (show) shown++;
+    });
+    visibleCount.textContent = shown + (shown === 1 ? ' product' : ' products');
+  }
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(function (b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      this.classList.add('active');
+      this.setAttribute('aria-pressed', 'true');
+      currentFilter = this.dataset.filter;
+      applyFilter();
+    });
+  });
+
+  /* Sort — reorders DOM nodes */
+  document.getElementById('sort-select').addEventListener('change', function () {
+    var sortVal = this.value;
+    ['product-grid-row1', 'product-grid-row2'].forEach(function (id) {
+      var grid = document.getElementById(id);
+      if (!grid) return;
+      var cards = Array.from(grid.querySelectorAll('.shop-card'));
+      cards.sort(function (a, b) {
+        if (sortVal === 'price-asc')  return parseInt(a.dataset.price, 10) - parseInt(b.dataset.price, 10);
+        if (sortVal === 'price-desc') return parseInt(b.dataset.price, 10) - parseInt(a.dataset.price, 10);
+        if (sortVal === 'name-asc') {
+          var na = (a.dataset.name || '').toLowerCase();
+          var nb = (b.dataset.name || '').toLowerCase();
+          return na < nb ? -1 : na > nb ? 1 : 0;
+        }
+        return 0;
+      });
+      cards.forEach(function (card) { grid.appendChild(card); });
+    });
+  });
+
+  /* ── 3D tilt on product cards ────────────────────────── */
+  document.querySelectorAll('.shop-card').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var r = this.getBoundingClientRect();
+      var x = (e.clientX - r.left)  / r.width  - 0.5;
+      var y = (e.clientY - r.top)   / r.height - 0.5;
+      this.style.transition = 'none';
+      this.style.transform  =
+        'perspective(900px) rotateY(' + (x * 8) + 'deg) rotateX(' + (-y * 8) + 'deg) translateY(-8px)';
+    });
+    card.addEventListener('mouseleave', function () {
+      this.style.transition =
+        'transform 600ms var(--ease-out), box-shadow 400ms, border-color 300ms, opacity 320ms var(--ease-out)';
+      this.style.transform = '';
+    });
+  });
+
+  /* ── Card / banner click → product page ──────────────── */
+  document.querySelectorAll('.shop-card[data-href], .featured-banner[data-href]').forEach(function (card) {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function (e) {
+      if (e.target.closest('button')) return;
+      window.location.href = card.dataset.href;
+    });
+  });
+
+  /* ── GSAP ScrollTrigger reveals ──────────────────────── */
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.reveal').forEach(function (el) {
+      gsap.fromTo(el,
+        { opacity: 0, y: 45 },
+        {
+          opacity: 1, y: 0, duration: 0.9, ease: 'power2.out',
+          scrollTrigger: {
+            trigger: el, start: 'top 95%', once: true,
+            onEnter: function () {
+              gsap.to(el, { opacity: 1, y: 0, duration: 0.9, ease: 'power2.out' });
+            }
+          }
+        }
+      );
+    });
+  } else {
+    /* IntersectionObserver fallback */
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  }
+
+  /* ── Init ──────────────────────────────────────────────── */
+  renderCart();
+  applyFilter();
+
+}());
+</script>
+
+</body>
+</html>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Back to Eden Powder — Eden's Cure | R290</title>
+  <meta name="description" content="Six ancient roots. One transformative formula. Cayenne, Fenugreek, Garlic, Ginger, Turmeric, Cinnamon. Back to Eden Powder by Eden's Cure — R290 / 200g.">
+  <meta name="theme-color" content="#1F3D1A">
+
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/favicon-32.png">
+
+  <meta property="og:type" content="product">
+  <meta property="og:site_name" content="Eden's Cure">
+  <meta property="og:title" content="Back to Eden Powder — Eden's Cure">
+  <meta property="og:description" content="Six ancient roots. One transformative formula. Cayenne, Fenugreek, Garlic, Ginger, Turmeric, Cinnamon.">
+  <meta property="og:image" content="https://www.edenscurelife.co.za/assets/og-share.jpg">
+  <meta property="og:url" content="https://www.edenscurelife.co.za/product-back-to-eden.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/product-pages.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script src="js/theme.js"></script>
+</head>
+<body>
+
+  <!-- ══ NAV ══════════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/favicon.svg" class="nav-logo-icon" alt="" aria-hidden="true" width="30" height="30">
+      Eden's <span>Cure</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="journal.html">Journal</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun"  viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <a href="shop.html" class="btn btn-gold nav-btn-desktop" style="padding: 11px 26px; font-size: 12px;">Shop Now</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="journal.html">Journal</a>
+    <a href="shop.html" class="btn btn-gold" style="margin-top:16px;">Shop Now</a>
+  </div>
+
+  <!-- ══ BREADCRUMB ════════════════════════════════════════ -->
+  <nav class="pdp-breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="pdp-bc-sep">/</span>
+    <a href="shop.html">Shop</a>
+    <span class="pdp-bc-sep">/</span>
+    <span class="pdp-bc-current">Back to Eden</span>
+  </nav>
+
+  <!-- ══ PRODUCT MAIN ══════════════════════════════════════ -->
+  <section class="pdp-main">
+    <div class="pdp-grid">
+
+      <!-- Gallery -->
+      <div class="pdp-gallery" id="pdpGallery">
+        <div class="pdp-main-img-wrap">
+          <div class="pdp-img-glow"></div>
+          <img
+            id="mainImg"
+            class="pdp-main-img"
+            src="assets/images/mockups/A01-hero-back-to-eden.png"
+            alt="Back to Eden Powder — 200g tin"
+            onerror="this.style.opacity='0.3'"
+          >
+        </div>
+        <div class="pdp-thumbs">
+          <div class="pdp-thumb active" data-img="assets/images/mockups/A01-hero-back-to-eden.png" data-alt="Back to Eden Powder front">
+            <img src="assets/images/mockups/A01-hero-back-to-eden.png" alt="" loading="lazy" onerror="this.parentElement.style.opacity='0.4'">
+          </div>
+          <div class="pdp-thumb" data-img="assets/images/mockups/B01-alt-back-to-eden.png" data-alt="Back to Eden Powder alternate view">
+            <img src="assets/images/mockups/B01-alt-back-to-eden.png" alt="" loading="lazy" onerror="this.parentElement.style.opacity='0.4'">
+          </div>
+          <div class="pdp-thumb" data-img="assets/images/mockups/C01-group-flatlay.png" data-alt="Eden's Cure collection flatlay">
+            <img src="assets/images/mockups/C01-group-flatlay.png" alt="" loading="lazy" onerror="this.parentElement.style.opacity='0.4'">
+          </div>
+        </div>
+      </div>
+
+      <!-- Product info -->
+      <div class="pdp-info" id="pdpInfo">
+        <div class="pdp-badge">
+          <span class="pdp-badge-dot"></span>
+          Signature Blend
+        </div>
+
+        <h1 class="pdp-name">Back to Eden<br>Powder</h1>
+
+        <p class="pdp-tagline">"Six ancient roots. One transformative formula, as Abba intended."</p>
+
+        <div class="pdp-stars" aria-label="Rated 4.9 out of 5">
+          <div class="pdp-stars-row">
+            <svg class="pdp-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="pdp-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="pdp-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="pdp-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="pdp-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          </div>
+          <span class="pdp-rating-text">4.9 · 47 reviews</span>
+        </div>
+
+        <div class="pdp-price-row">
+          <div class="pdp-price" aria-label="Price R290">R 290</div>
+          <div class="pdp-size-tag">200g</div>
+        </div>
+        <p class="pdp-vat-note">VAT incl. · Free shipping on orders over R500</p>
+
+        <div class="pdp-divider"></div>
+
+        <p class="pdp-benefits-label">Key Benefits</p>
+        <ul class="pdp-benefits" id="pdpBenefits">
+          <li>
+            <svg class="pdp-benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+            Anti-inflammatory support
+          </li>
+          <li>
+            <svg class="pdp-benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+            Digestive health
+          </li>
+          <li>
+            <svg class="pdp-benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+            Circulatory support
+          </li>
+          <li>
+            <svg class="pdp-benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+            Immune fortification
+          </li>
+          <li>
+            <svg class="pdp-benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+            Blood sugar balance
+          </li>
+          <li>
+            <svg class="pdp-benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+            Antioxidant-rich
+          </li>
+        </ul>
+
+        <div class="pdp-purchase">
+          <div class="pdp-qty" role="group" aria-label="Quantity">
+            <button class="pdp-qty-btn" id="qtyMinus" aria-label="Decrease quantity">−</button>
+            <div class="pdp-qty-num" id="qtyNum" aria-live="polite">1</div>
+            <button class="pdp-qty-btn" id="qtyPlus" aria-label="Increase quantity">+</button>
+          </div>
+          <button class="pdp-add-btn" id="addBtn" aria-label="Add Back to Eden Powder to cart">
+            Add to Cart
+          </button>
+        </div>
+
+        <a
+          href="https://wa.me/27814298709?text=Hi%2C%20I%27d%20like%20to%20order%20Back%20to%20Eden%20Powder%20(R290%2F200g)"
+          class="pdp-whatsapp"
+          target="_blank" rel="noopener"
+          aria-label="Order via WhatsApp"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Order via WhatsApp
+        </a>
+
+        <div class="pdp-trust" id="pdpTrust">
+          <div class="pdp-trust-item">
+            <svg class="pdp-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span class="pdp-trust-label">100%<br>Natural</span>
+          </div>
+          <div class="pdp-trust-item">
+            <svg class="pdp-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            <span class="pdp-trust-label">No<br>Additives</span>
+          </div>
+          <div class="pdp-trust-item">
+            <svg class="pdp-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-4m-3 0a2 2 0 11-4 0 2 2 0 014 0m7 0a2 2 0 11-4 0 2 2 0 014 0"/></svg>
+            <span class="pdp-trust-label">Free Ship<br>R500+</span>
+          </div>
+          <div class="pdp-trust-item">
+            <svg class="pdp-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            <span class="pdp-trust-label">Made with<br>Purpose</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TABS ══════════════════════════════════════════════ -->
+  <section class="pdp-tabs-section" aria-label="Product details">
+    <div class="pdp-tabs-inner">
+      <nav class="pdp-tabs-nav" aria-label="Product detail tabs">
+        <button class="pdp-tab-btn active" data-tab="overview">Overview</button>
+        <button class="pdp-tab-btn" data-tab="ingredients">Ingredients</button>
+        <button class="pdp-tab-btn" data-tab="howtouse">How to Use</button>
+        <button class="pdp-tab-btn" data-tab="research">Research</button>
+      </nav>
+
+      <!-- Overview -->
+      <div class="pdp-tab-panel active" id="tab-overview">
+        <div class="pdp-tab-panel-inner">
+          <div class="pdp-tab-text">
+            <h3>Ancient wisdom, precisely formulated</h3>
+            <p>Back to Eden is Abba Shomriel's foundational formula — a blend of six powerful roots and spices that have been used across Africa and the Middle East for centuries. Every ingredient was chosen for its synergistic relationship with the others.</p>
+            <p>Cayenne opens circulation, carrying the other herbs deeper into the body. Ginger and fenugreek soothe the gut. Garlic purifies and protects. Turmeric and cinnamon provide the long-acting anti-inflammatory and metabolic foundation.</p>
+            <ul class="pdp-tab-list">
+              <li>Powerful anti-inflammatory effect from turmeric curcumin</li>
+              <li>Supports healthy blood sugar and insulin sensitivity</li>
+              <li>Enhances gut function and enzyme activity</li>
+              <li>Boosts circulation to bring nutrients to every cell</li>
+              <li>Potent antimicrobial from garlic's allicin compounds</li>
+              <li>Zero fillers, binders, or artificial anything</li>
+            </ul>
+          </div>
+          <div class="pdp-tab-img-wrap">
+            <img class="pdp-tab-img" src="assets/images/ingredients-spices.jpg" alt="Turmeric, ginger, cinnamon and spices" loading="lazy" onerror="this.parentElement.style.background='rgba(26,18,11,0.8)'">
+          </div>
+        </div>
+      </div>
+
+      <!-- Ingredients -->
+      <div class="pdp-tab-panel" id="tab-ingredients">
+        <div class="pdp-tab-panel-inner">
+          <div class="pdp-tab-text">
+            <h3>Six roots. Zero compromise.</h3>
+            <p>Every ingredient is sourced whole, dried at low temperature to preserve active compounds, and ground to order. No excipients. No flow agents. Just the plant.</p>
+            <div class="pdp-ingredients-grid">
+              <div class="pdp-ingredient-card">
+                <div class="pdp-ingredient-name">Cayenne Pepper</div>
+                <div class="pdp-ingredient-origin">Capsicum annuum</div>
+              </div>
+              <div class="pdp-ingredient-card">
+                <div class="pdp-ingredient-name">Fenugreek</div>
+                <div class="pdp-ingredient-origin">Trigonella foenum</div>
+              </div>
+              <div class="pdp-ingredient-card">
+                <div class="pdp-ingredient-name">Garlic</div>
+                <div class="pdp-ingredient-origin">Allium sativum</div>
+              </div>
+              <div class="pdp-ingredient-card">
+                <div class="pdp-ingredient-name">Ginger Root</div>
+                <div class="pdp-ingredient-origin">Zingiber officinale</div>
+              </div>
+              <div class="pdp-ingredient-card">
+                <div class="pdp-ingredient-name">Turmeric</div>
+                <div class="pdp-ingredient-origin">Curcuma longa</div>
+              </div>
+              <div class="pdp-ingredient-card">
+                <div class="pdp-ingredient-name">Cinnamon</div>
+                <div class="pdp-ingredient-origin">Cinnamomum verum</div>
+              </div>
+            </div>
+          </div>
+          <div class="pdp-tab-img-wrap">
+            <img class="pdp-tab-img" src="assets/images/ingredients-spices.jpg" alt="Fresh turmeric, ginger and cinnamon" loading="lazy" onerror="this.parentElement.style.background='rgba(26,18,11,0.8)'">
+          </div>
+        </div>
+      </div>
+
+      <!-- How to Use -->
+      <div class="pdp-tab-panel" id="tab-howtouse">
+        <div class="pdp-tab-panel-inner">
+          <div class="pdp-tab-text">
+            <h3>Daily ritual, simple as nature</h3>
+            <p>Back to Eden is versatile. Use it as a daily tonic, add it to food, or blend it into smoothies. Consistent use over 30+ days produces the most significant results.</p>
+            <ol class="pdp-steps">
+              <li class="pdp-step">
+                <div class="pdp-step-num">1</div>
+                <div>
+                  <div class="pdp-step-title">Morning Tonic</div>
+                  <div class="pdp-step-desc">Mix ½ teaspoon into warm water or juice on an empty stomach, 15 minutes before breakfast. This is the most potent way to take it.</div>
+                </div>
+              </li>
+              <li class="pdp-step">
+                <div class="pdp-step-num">2</div>
+                <div>
+                  <div class="pdp-step-title">Add to Food</div>
+                  <div class="pdp-step-desc">Stir into stews, soups, or rice dishes. Heat does not significantly reduce potency — the active compounds are heat-stable.</div>
+                </div>
+              </li>
+              <li class="pdp-step">
+                <div class="pdp-step-num">3</div>
+                <div>
+                  <div class="pdp-step-title">Smoothie Blend</div>
+                  <div class="pdp-step-desc">Add 1 teaspoon to your morning smoothie with banana, mango, or almond milk to balance the spice and maximise absorption.</div>
+                </div>
+              </li>
+              <li class="pdp-step">
+                <div class="pdp-step-num">4</div>
+                <div>
+                  <div class="pdp-step-title">Be Consistent</div>
+                  <div class="pdp-step-desc">Use daily for at least 30 days. Plant medicine works cumulatively — the longer you use it, the more your body responds.</div>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div class="pdp-tab-img-wrap">
+            <img class="pdp-tab-img" src="assets/images/ingredients-spices.jpg" alt="Spices being prepared" loading="lazy" onerror="this.parentElement.style.background='rgba(26,18,11,0.8)'">
+          </div>
+        </div>
+      </div>
+
+      <!-- Research -->
+      <div class="pdp-tab-panel" id="tab-research">
+        <div class="pdp-tab-panel-inner">
+          <div class="pdp-tab-text">
+            <h3>Backed by centuries of use and modern science</h3>
+            <p>Each ingredient in Back to Eden has an extensive body of traditional use and is increasingly supported by clinical research.</p>
+            <div class="pdp-research-list">
+              <div class="pdp-research-item">
+                <div class="pdp-research-title">Curcumin from turmeric is one of the most studied anti-inflammatory compounds in natural medicine</div>
+                <div class="pdp-research-source">Journal of Medicinal Chemistry · 2022</div>
+                <div class="pdp-research-desc">Meta-analysis of 53 trials confirms curcumin supplementation significantly reduces markers of systemic inflammation including CRP and IL-6.</div>
+              </div>
+              <div class="pdp-research-item">
+                <div class="pdp-research-title">Cinnamon extract shows statistically significant improvement in fasting blood glucose</div>
+                <div class="pdp-research-source">Diabetes Care · 2019</div>
+                <div class="pdp-research-desc">10 RCTs found Cinnamomum verum reduced fasting glucose by an average of 8.11 mg/dL versus placebo over 12 weeks.</div>
+              </div>
+              <div class="pdp-research-item">
+                <div class="pdp-research-title">Garlic allicin reduces blood pressure and LDL cholesterol in hypertensive adults</div>
+                <div class="pdp-research-source">Nutrients · 2020</div>
+                <div class="pdp-research-desc">Systematic review of 39 studies confirms aged garlic extract produces clinically meaningful reductions in both systolic and diastolic blood pressure.</div>
+              </div>
+            </div>
+          </div>
+          <div class="pdp-tab-img-wrap">
+            <img class="pdp-tab-img" src="assets/images/ingredients-spices.jpg" alt="Natural ingredients" loading="lazy" onerror="this.parentElement.style.background='rgba(26,18,11,0.8)'">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ RELATED PRODUCTS ══════════════════════════════════ -->
+  <section class="pdp-related-section" aria-label="You may also like">
+    <div class="pdp-related-inner">
+      <div class="pdp-related-header">
+        <h2 class="pdp-related-title">Complete the Collection</h2>
+        <span class="pdp-related-sub">3 more remedies</span>
+      </div>
+      <div class="pdp-related-grid">
+        <a href="product-moringa.html" class="pdp-related-card">
+          <div class="pdp-related-img-wrap">
+            <div class="pdp-related-img-glow"></div>
+            <img class="pdp-related-img" src="assets/images/mockups/A02-hero-moringa.png" alt="Moringa Leaf Powder" loading="lazy" onerror="this.style.opacity='0.3'">
+          </div>
+          <div class="pdp-related-info">
+            <div class="pdp-related-name">Moringa Powder</div>
+            <div class="pdp-related-desc">95 nutrients from Africa's Miracle Tree</div>
+            <div class="pdp-related-footer">
+              <div class="pdp-related-price">R 280</div>
+              <div class="pdp-related-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg></div>
+            </div>
+          </div>
+        </a>
+        <a href="product-black-seed.html" class="pdp-related-card">
+          <div class="pdp-related-img-wrap">
+            <div class="pdp-related-img-glow"></div>
+            <img class="pdp-related-img" src="assets/images/mockups/A03-hero-blackseed.png" alt="Kammon Black Seed" loading="lazy" onerror="this.style.opacity='0.3'">
+          </div>
+          <div class="pdp-related-info">
+            <div class="pdp-related-name">Black Seed</div>
+            <div class="pdp-related-desc">The prophetic seed for everything except death</div>
+            <div class="pdp-related-footer">
+              <div class="pdp-related-price">R 310</div>
+              <div class="pdp-related-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg></div>
+            </div>
+          </div>
+        </a>
+        <a href="product-molasses.html" class="pdp-related-card">
+          <div class="pdp-related-img-wrap">
+            <div class="pdp-related-img-glow"></div>
+            <img class="pdp-related-img" src="assets/images/mockups/A04-hero-molasses-bottle.png" alt="Blackstrap Molasses" loading="lazy" onerror="this.style.opacity='0.3'">
+          </div>
+          <div class="pdp-related-info">
+            <div class="pdp-related-name">Black Molasses</div>
+            <div class="pdp-related-desc">Nature's most complete mineral tonic</div>
+            <div class="pdp-related-footer">
+              <div class="pdp-related-price">R 260</div>
+              <div class="pdp-related-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg></div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="assets/favicon.svg" class="footer-logo-icon" alt="" aria-hidden="true" width="36" height="36">
+            <span>Eden's <span style="color:var(--gold)">Cure</span></span>
+          </div>
+          <div class="footer-tagline-text">Ancient Wisdom. Modern Healing.</div>
+          <p class="footer-desc">Restoring what nature intended. Four pure remedies. Zero compromise. African heritage in every bottle.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Shop</div>
+          <ul class="footer-links">
+            <li><a href="product-back-to-eden.html">Back to Eden</a></li>
+            <li><a href="product-moringa.html">Moringa</a></li>
+            <li><a href="product-black-seed.html">Black Seed</a></li>
+            <li><a href="product-molasses.html">Black Molasses</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html">Ingredients</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Follow</div>
+          <ul class="footer-links">
+            <li><a href="https://instagram.com/edenscure" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://facebook.com/edenscure" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://wa.me/27814298709" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2026 Eden's Cure · <a href="https://edenscure.co.za">edenscure.co.za</a></div>
+        <div class="footer-made">Made with purpose in South Africa.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══ MOBILE STICKY BAR ═════════════════════════════════ -->
+  <div class="pdp-sticky-bar" id="stickyBar" aria-label="Quick add to cart">
+    <div class="pdp-sticky-left">
+      <div class="pdp-sticky-price">R 290</div>
+      <div class="pdp-sticky-name">Back to Eden</div>
+    </div>
+    <button class="pdp-sticky-btn" id="stickyBtn" aria-label="Add to cart">Add to Cart</button>
+  </div>
+
+  <!-- ══ JAVASCRIPT ════════════════════════════════════════ -->
+  <script>
+  (function () {
+    'use strict';
+
+    /* ── Nav scroll ─────────── */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    /* ── Hamburger ──────────── */
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', function () {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    document.querySelectorAll('.mobile-menu a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    /* ── Image gallery ──────── */
+    const mainImg = document.getElementById('mainImg');
+    const thumbs = document.querySelectorAll('.pdp-thumb');
+    thumbs.forEach(function (thumb) {
+      thumb.addEventListener('click', function () {
+        const newSrc = thumb.dataset.img;
+        const newAlt = thumb.dataset.alt || '';
+        thumbs.forEach(function (t) { t.classList.remove('active'); });
+        thumb.classList.add('active');
+        gsap.to(mainImg, { opacity: 0, scale: 0.97, duration: 0.18, ease: 'power2.in', onComplete: function () {
+          mainImg.src = newSrc;
+          mainImg.alt = newAlt;
+          gsap.to(mainImg, { opacity: 1, scale: 1, duration: 0.35, ease: 'power2.out' });
+        }});
+      });
+    });
+
+    /* ── Qty ────────────────── */
+    var qty = 1;
+    var qtyNum = document.getElementById('qtyNum');
+    document.getElementById('qtyMinus').addEventListener('click', function () {
+      if (qty > 1) { qty--; qtyNum.textContent = qty; }
+    });
+    document.getElementById('qtyPlus').addEventListener('click', function () {
+      qty++;
+      qtyNum.textContent = qty;
+    });
+
+    /* ── Tabs ───────────────── */
+    const tabBtns = document.querySelectorAll('.pdp-tab-btn');
+    const tabPanels = document.querySelectorAll('.pdp-tab-panel');
+    tabBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const target = btn.dataset.tab;
+        tabBtns.forEach(function (b) { b.classList.remove('active'); });
+        tabPanels.forEach(function (p) { p.classList.remove('active'); });
+        btn.classList.add('active');
+        const panel = document.getElementById('tab-' + target);
+        panel.classList.add('active');
+        gsap.fromTo(panel, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.38, ease: 'power2.out' });
+      });
+    });
+
+    /* ── Add to cart ────────── */
+    function addToCart() {
+      var btn = document.getElementById('addBtn');
+      var original = btn.textContent;
+      btn.textContent = 'Added to Cart';
+      btn.style.background = '#2C8A5B';
+      btn.style.color = '#fff';
+      setTimeout(function () {
+        btn.textContent = original;
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 2000);
+    }
+    document.getElementById('addBtn').addEventListener('click', addToCart);
+    document.getElementById('stickyBtn').addEventListener('click', addToCart);
+
+    /* ── Sticky bar hide when add btn visible ── */
+    var stickyBar = document.getElementById('stickyBar');
+    var addBtnEl = document.getElementById('addBtn');
+    var io = new IntersectionObserver(function (entries) {
+      stickyBar.style.opacity = entries[0].isIntersecting ? '0' : '1';
+      stickyBar.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+    });
+    io.observe(addBtnEl);
+
+    /* ── Lenis smooth scroll ── */
+    var lenis = new Lenis({ duration: 1.15, easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); } });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+
+    /* ── GSAP animations ────── */
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.fromTo('#pdpGallery', { opacity: 0, x: -36 }, { opacity: 1, x: 0, duration: 0.85, ease: 'power3.out', delay: 0.15 });
+    gsap.fromTo('#pdpInfo', { opacity: 0, x: 36 }, { opacity: 1, x: 0, duration: 0.85, ease: 'power3.out', delay: 0.3 });
+    gsap.fromTo('#pdpBenefits li', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45, stagger: 0.07, ease: 'power2.out', delay: 0.65 });
+    gsap.fromTo('#pdpTrust .pdp-trust-item', { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.45, stagger: 0.09, ease: 'power2.out', delay: 0.85 });
+
+    gsap.fromTo('.pdp-related-card', { opacity: 0, y: 36 }, {
+      opacity: 1, y: 0, duration: 0.65, stagger: 0.13, ease: 'power3.out',
+      scrollTrigger: { trigger: '.pdp-related-section', start: 'top 82%' }
+    });
+
+  }());
+  </script>
+
+</body>
+</html>

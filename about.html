@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Eden's Cure | From the Earth. For the Body.</title>
+  <meta name="description" content="Eden's Cure was born from a simple question: what if we stopped looking for healing in laboratories, and started looking in the ground beneath our feet?">
+  <meta name="theme-color" content="#1F3D1A">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/favicon-32.png">
+
+  <!-- Open Graph / WhatsApp sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Eden's Cure">
+  <meta property="og:title" content="About Eden's Cure — Ancient Wisdom. Modern Healing.">
+  <meta property="og:description" content="Eden's Cure was born from a simple question: what if we stopped looking for healing in laboratories, and started looking in the ground beneath our feet?">
+  <meta property="og:image" content="https://www.edenscurelife.co.za/assets/og-share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://www.edenscurelife.co.za/about.html">
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Eden's Cure">
+  <meta name="twitter:image" content="https://www.edenscurelife.co.za/assets/og-share.jpg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <!-- Design System -->
+  <link rel="stylesheet" href="css/design-system.css">
+
+  <style>
+    /* ═══════════════════════════════════════════════
+       ABOUT PAGE — Eden's Cure
+       Aleph Creative-Hub | 2025
+    ═══════════════════════════════════════════════ */
+
+    /* ── NOISE TEXTURE SVG ─────────────────────── */
+    .noise-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+
+    /* ── HERO SECTION ──────────────────────────── */
+    .about-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--black);
+    }
+
+    .hero-orb-tl {
+      position: absolute;
+      top: -10%;
+      left: -10%;
+      width: 65%;
+      height: 65%;
+      background: radial-gradient(circle, rgba(74,124,89,0.15) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-orb-br {
+      position: absolute;
+      bottom: -10%;
+      right: -10%;
+      width: 60%;
+      height: 60%;
+      background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .about-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 var(--safe-x);
+      max-width: 1000px;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 800ms var(--ease-out) 200ms both;
+    }
+
+    .hero-headline {
+      font-family: var(--font-serif);
+      font-size: clamp(72px, 9.5vw, 130px);
+      font-weight: 300;
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      color: var(--cream);
+      opacity: 0;
+      animation: fadeUp 1000ms var(--ease-out) 400ms both;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      display: block;
+    }
+
+    .hero-subtitle {
+      max-width: 680px;
+      margin: 44px auto 0;
+      font-family: var(--font-serif);
+      font-size: clamp(17px, 1.5vw, 21px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      opacity: 0;
+      animation: fadeUp 1000ms var(--ease-out) 700ms both;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 48px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeIn 800ms var(--ease-out) 1200ms both;
+    }
+
+    .hero-scroll span {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .scroll-arrow {
+      width: 1px;
+      height: 44px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scroll-arrow::after {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gold);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0% { top: -100%; }
+      100% { top: 100%; }
+    }
+
+    /* ── HERO RULE ──────────────────────────────── */
+    .hero-divider {
+      position: relative;
+      z-index: 2;
+      margin-top: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      opacity: 0;
+      animation: fadeIn 1000ms var(--ease-out) 1000ms both;
+    }
+
+    .hero-rule-line {
+      width: 160px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,168,76,0.5), rgba(201,168,76,0.8));
+    }
+
+    .hero-rule-line.right {
+      background: linear-gradient(to left, transparent, rgba(201,168,76,0.5), rgba(201,168,76,0.8));
+    }
+
+    .hero-rule-star {
+      font-size: 14px;
+      color: var(--gold);
+    }
+
+    /* ── ORIGIN STORY ───────────────────────────── */
+    .origin-section {
+      padding: clamp(80px, 10vw, 140px) 0;
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .origin-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 var(--safe-x);
+      display: grid;
+      grid-template-columns: 55fr 45fr;
+      gap: clamp(48px, 6vw, 100px);
+      align-items: center;
+    }
+
+    .origin-text {
+      position: relative;
+    }
+
+    .origin-editorial {
+      font-family: var(--font-serif);
+      font-size: clamp(18px, 1.7vw, 24px);
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--cream);
+    }
+
+    .origin-editorial .drop-cap::first-letter {
+      font-size: 5em;
+      float: left;
+      line-height: 0.75;
+      color: var(--gold);
+      margin: 0.05em 0.12em 0 0;
+      font-family: var(--font-serif);
+      font-weight: 600;
+    }
+
+    .origin-editorial p + p {
+      margin-top: 28px;
+    }
+
+    .origin-editorial strong {
+      color: var(--gold-light);
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .origin-title {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 3.5vw, 52px);
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 36px;
+      line-height: 1.1;
+    }
+
+    .origin-visual {
+      position: relative;
+    }
+
+    .origin-img-frame {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .origin-img-frame::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 55%;
+      background: linear-gradient(to top, var(--black) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .origin-img-frame img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .origin-img-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      z-index: 2;
+      background: rgba(10,8,6,0.8);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 12px;
+      padding: 12px 18px;
+    }
+
+    .origin-img-badge .badge-num {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .origin-img-badge .badge-label {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ── STATS STRIP ────────────────────────────── */
+    .stats-strip {
+      padding: clamp(64px, 8vw, 100px) 0;
+      background: var(--brown-deep);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 100% at 50% 50%, rgba(201,168,76,0.04), transparent);
+      pointer-events: none;
+    }
+
+    .stats-grid {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 var(--safe-x);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 20px 24px;
+      position: relative;
+    }
+
+    .stat-item + .stat-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10%;
+      height: 80%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.3), transparent);
+    }
+
+    .stat-number {
+      font-family: var(--font-serif);
+      font-size: clamp(60px, 7vw, 100px);
+      font-weight: 300;
+      font-style: italic;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      display: block;
+    }
+
+    .stat-label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 12px;
+      line-height: 1.5;
+      max-width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .stat-context {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      color: rgba(201,168,76,0.5);
+      margin-top: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── INGREDIENTS TIMELINE ───────────────────── */
+    .ingredients-section {
+      padding: clamp(80px, 10vw, 140px) 0;
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ingredients-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto clamp(64px, 8vw, 100px);
+      padding: 0 var(--safe-x);
+    }
+
+    .ingredients-header .section-label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .ingredients-header h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(40px, 5vw, 72px);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--cream);
+      margin-bottom: 20px;
+    }
+
+    .ingredients-header p {
+      font-family: var(--font-serif);
+      font-size: clamp(16px, 1.4vw, 20px);
+      font-style: italic;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Timeline line */
+    .timeline-container {
+      position: relative;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 var(--safe-x);
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      transform: translateX(-50%);
+      background: linear-gradient(to bottom,
+        transparent 0%,
+        rgba(201,168,76,0.2) 5%,
+        rgba(201,168,76,0.2) 95%,
+        transparent 100%
+      );
+      z-index: 0;
+    }
+
+    .timeline-line::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(201,168,76,0.35) 0px,
+        rgba(201,168,76,0.35) 8px,
+        transparent 8px,
+        transparent 20px
+      );
+    }
+
+    .ingredient-row {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      gap: 0;
+      align-items: center;
+      margin-bottom: clamp(60px, 8vw, 100px);
+      position: relative;
+      z-index: 1;
+    }
+
+    .ingredient-row.reverse .ingredient-visual {
+      order: 3;
+    }
+
+    .ingredient-row.reverse .ingredient-center {
+      order: 2;
+    }
+
+    .ingredient-row.reverse .ingredient-text {
+      order: 1;
+      text-align: right;
+    }
+
+    .ingredient-row.reverse .benefit-pills {
+      justify-content: flex-end;
+    }
+
+    .ingredient-row.reverse .ingredient-action {
+      flex-direction: row-reverse;
+    }
+
+    /* Timeline center dot */
+    .ingredient-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow:
+        0 0 0 4px rgba(201,168,76,0.15),
+        0 0 0 8px rgba(201,168,76,0.06),
+        0 0 24px rgba(201,168,76,0.4);
+      flex-shrink: 0;
+    }
+
+    /* Visual side */
+    .ingredient-visual {
+      padding: 0 24px;
+      position: relative;
+    }
+
+    .ingredient-img-wrap {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .ingredient-glow {
+      position: absolute;
+      inset: -30px;
+      background: radial-gradient(circle at center, rgba(201,168,76,0.12) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .ingredient-img-wrap img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: contain;
+      padding: 32px;
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(135deg, rgba(26,18,11,0.8), rgba(45,31,13,0.6));
+      transition: transform 600ms var(--ease-out);
+    }
+
+    .ingredient-row:hover .ingredient-img-wrap img {
+      transform: scale(1.04) translateY(-6px);
+    }
+
+    /* Text side */
+    .ingredient-text {
+      padding: 0 24px;
+    }
+
+    .ingredient-origin {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--sage-light);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ingredient-origin::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1px;
+      background: var(--sage-light);
+      opacity: 0.6;
+    }
+
+    .ingredient-row.reverse .ingredient-origin {
+      flex-direction: row-reverse;
+    }
+
+    .ingredient-row.reverse .ingredient-origin::before {
+      display: none;
+    }
+
+    .ingredient-row.reverse .ingredient-origin::after {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1px;
+      background: var(--sage-light);
+      opacity: 0.6;
+    }
+
+    .ingredient-name {
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.0;
+      margin-bottom: 18px;
+    }
+
+    .ingredient-desc {
+      font-family: var(--font-serif);
+      font-size: clamp(15px, 1.3vw, 18px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .benefit-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      background: rgba(201,168,76,0.06);
+      border: 1px solid rgba(201,168,76,0.2);
+      color: var(--gold-light);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: all var(--t-med);
+    }
+
+    .pill:hover {
+      background: rgba(201,168,76,0.12);
+      border-color: rgba(201,168,76,0.4);
+    }
+
+    .ingredient-action {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .ingredient-price {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .ingredient-link {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color var(--t-fast);
+      cursor: pointer;
+    }
+
+    .ingredient-link:hover {
+      color: var(--cream);
+    }
+
+    .ingredient-link svg {
+      width: 14px;
+      height: 14px;
+      transition: transform var(--t-med);
+    }
+
+    .ingredient-link:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* ── PHILOSOPHY SECTION ─────────────────────── */
+    .philosophy-section {
+      padding: clamp(100px, 13vw, 180px) var(--safe-x);
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .philosophy-grain {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .philosophy-grain::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+      opacity: 0.018;
+      mix-blend-mode: overlay;
+    }
+
+    .philosophy-glow-left {
+      position: absolute;
+      left: -10%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .philosophy-glow-right {
+      position: absolute;
+      right: -10%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(74,124,89,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .philosophy-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .philosophy-eyebrow {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 48px;
+    }
+
+    .philosophy-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(44px, 6.5vw, 92px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.05;
+      color: var(--cream);
+      letter-spacing: -0.01em;
+    }
+
+    .philosophy-quote em {
+      display: block;
+    }
+
+    .philosophy-rule {
+      width: 80px;
+      height: 1px;
+      background: var(--gold-gradient);
+      margin: 48px auto;
+      opacity: 0.5;
+    }
+
+    .philosophy-sub {
+      font-family: var(--font-serif);
+      font-size: clamp(16px, 1.5vw, 20px);
+      font-style: italic;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ── VALUES SECTION ─────────────────────────── */
+    .values-section {
+      padding: clamp(80px, 10vw, 120px) 0;
+      background: var(--brown-deep);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .values-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,168,76,0.03), transparent);
+      pointer-events: none;
+    }
+
+    .values-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 var(--safe-x);
+    }
+
+    .values-header {
+      text-align: center;
+      margin-bottom: clamp(48px, 6vw, 80px);
+    }
+
+    .values-label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .values-title {
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 4vw, 60px);
+      font-weight: 300;
+      color: var(--cream);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(20px, 2.5vw, 36px);
+    }
+
+    .value-card {
+      position: relative;
+      padding: 44px 36px 40px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all 400ms var(--ease-out);
+      overflow: hidden;
+    }
+
+    .value-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 24px;
+      right: 24px;
+      height: 2px;
+      background: var(--gold-gradient);
+      opacity: 0.7;
+      border-radius: 0 0 2px 2px;
+    }
+
+    .value-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(201,168,76,0.04), transparent 60%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 400ms var(--ease-out);
+    }
+
+    .value-card:hover {
+      border-color: rgba(201,168,76,0.25);
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.3), 0 0 40px rgba(201,168,76,0.06);
+    }
+
+    .value-card:hover::after {
+      opacity: 1;
+    }
+
+    .value-number {
+      font-family: var(--font-serif);
+      font-size: 11px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--gold-dim);
+      margin-bottom: 24px;
+      letter-spacing: 0.1em;
+    }
+
+    .value-name {
+      font-family: var(--font-serif);
+      font-size: clamp(24px, 2.2vw, 32px);
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+
+    .value-desc {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--text-secondary);
+    }
+
+    .value-icon-wrap {
+      position: absolute;
+      bottom: 28px;
+      right: 28px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-dim);
+      transition: all var(--t-med);
+    }
+
+    .value-card:hover .value-icon-wrap {
+      border-color: rgba(201,168,76,0.4);
+      color: var(--gold);
+      box-shadow: 0 0 20px rgba(201,168,76,0.15);
+    }
+
+    /* ── CTA SECTION ────────────────────────────── */
+    .cta-section {
+      padding: clamp(100px, 13vw, 180px) var(--safe-x);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      background: linear-gradient(180deg, var(--black) 0%, var(--brown-deep) 50%, var(--black) 100%);
+    }
+
+    .cta-orb {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, rgba(201,168,76,0.04) 30%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .cta-label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    .cta-headline {
+      font-family: var(--font-serif);
+      font-size: clamp(60px, 8.5vw, 120px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 0.9;
+      color: var(--cream);
+      margin-bottom: 28px;
+      letter-spacing: -0.02em;
+    }
+
+    .cta-sub {
+      font-family: var(--font-serif);
+      font-size: clamp(16px, 1.5vw, 20px);
+      font-style: italic;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto 52px;
+    }
+
+    .cta-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* ── MARQUEE (between sections) ─────────────── */
+    .section-marquee {
+      overflow: hidden;
+      padding: 14px 0;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      background: rgba(201,168,76,0.02);
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────── */
+    @media (max-width: 1024px) {
+      .origin-inner {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .origin-visual {
+        order: -1;
+        max-width: 440px;
+        margin: 0 auto;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+
+      .stat-item + .stat-item::before {
+        display: none;
+      }
+
+      .stat-item:nth-child(1),
+      .stat-item:nth-child(3) {
+        border-right: 1px solid rgba(201,168,76,0.15);
+      }
+
+      .ingredient-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .ingredient-row .ingredient-visual,
+      .ingredient-row .ingredient-text,
+      .ingredient-row .ingredient-center {
+        order: unset !important;
+      }
+
+      .ingredient-center {
+        display: none;
+      }
+
+      .timeline-line {
+        display: none;
+      }
+
+      .ingredient-row.reverse .ingredient-text {
+        text-align: left;
+      }
+
+      .ingredient-row.reverse .benefit-pills {
+        justify-content: flex-start;
+      }
+
+      .ingredient-row.reverse .ingredient-action {
+        flex-direction: row;
+      }
+
+      .ingredient-row.reverse .ingredient-origin {
+        flex-direction: row;
+      }
+
+      .ingredient-row.reverse .ingredient-origin::after {
+        display: none;
+      }
+
+      .ingredient-row.reverse .ingredient-origin::before {
+        display: inline-block;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+        margin: 0 auto;
+      }
+
+      .hero-rule-line {
+        width: 100px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 0;
+      }
+
+      .hero-subtitle {
+        max-width: 100%;
+      }
+
+      .cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .cta-actions .btn {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+        max-width: 280px;
+        margin: 0 auto;
+      }
+
+      .stat-item:nth-child(1),
+      .stat-item:nth-child(3) {
+        border-right: none;
+      }
+
+      .origin-img-badge {
+        bottom: 16px;
+        left: 16px;
+      }
+    }
+
+    /* ── ANIMATED ORB (hero) ────────────────────── */
+    @keyframes orbDrift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -20px) scale(1.05); }
+      66% { transform: translate(-15px, 25px) scale(0.97); }
+    }
+
+    .hero-orb-tl { animation: orbDrift 22s ease-in-out infinite; }
+    .hero-orb-br { animation: orbDrift 18s ease-in-out infinite reverse; }
+
+    /* ── COUNTER STYLES ─────────────────────────── */
+    .stat-number[data-count] {
+      transition: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ══════════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════════ -->
+  <nav class="nav" id="mainNav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/favicon.svg" class="nav-logo-icon" alt="" aria-hidden="true" width="30" height="30">
+      Eden<span>'</span>s Cure
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun"  viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <a href="shop.html" class="btn btn-gold btn-sm">Shop Now</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="shop.html" class="btn btn-gold" style="margin-top:20px">Shop Now</a>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       HERO — FROM THE EARTH. FOR THE BODY.
+  ══════════════════════════════════════════════ -->
+  <section class="about-hero">
+    <!-- Aerial forest canopy background -->
+    <div class="about-hero-bg-wrap" style="position:absolute;inset:0;z-index:0;overflow:hidden;">
+      <img class="about-hero-bg-img" src="assets/images/about-hero-bg.jpg" alt="" aria-hidden="true"
+           style="width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.25;"
+           onerror="this.parentElement.style.display='none'">
+      <div class="about-hero-bg-overlay" style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,8,6,0.4) 0%,rgba(10,8,6,0.2) 40%,rgba(10,8,6,0.7) 80%,rgba(10,8,6,1) 100%);"></div>
+    </div>
+    <div class="hero-orb-tl"></div>
+    <div class="hero-orb-br"></div>
+    <div class="noise-overlay"></div>
+
+    <div class="about-hero-content">
+      <p class="hero-eyebrow">Our Story &nbsp;·&nbsp; Since Creation</p>
+
+      <h1 class="hero-headline">
+        From the Earth.<br>
+        <em>For the Body.</em>
+      </h1>
+
+      <p class="hero-subtitle">
+        Eden's Cure was born from a simple question: what if we stopped looking for healing
+        in laboratories, and started looking in the ground beneath our feet?
+      </p>
+
+      <div class="hero-divider">
+        <div class="hero-rule-line"></div>
+        <span class="hero-rule-star">✦</span>
+        <div class="hero-rule-line right"></div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       ORIGIN STORY
+  ══════════════════════════════════════════════ -->
+  <section class="origin-section">
+    <div class="origin-inner">
+      <!-- Left: Editorial Text -->
+      <div class="origin-text reveal">
+        <h2 class="origin-title">We Started<br>With a Question.</h2>
+
+        <div class="origin-editorial">
+          <p class="drop-cap">Before there were supplements, there were seeds. Before there were pharmaceuticals, there were forests. For thousands of years, our ancestors healed with what the earth provided — and <strong>the earth never failed them.</strong></p>
+
+          <p>Eden's Cure exists to restore that knowledge. Not as a nostalgic gesture, but as a living practice. Every product is formulated from ingredients that have been proven by millennia of use and, increasingly, by modern science.</p>
+
+          <p>We source only what is pure. We add nothing that shouldn't be there. We trust the earth to do what it has always done.</p>
+        </div>
+      </div>
+
+      <!-- Right: Product Image -->
+      <div class="origin-visual reveal reveal-delay-2">
+        <div class="origin-img-frame">
+          <img
+            src="assets/images/mockups/C02-group-hero-standing.png"
+            alt="Eden's Cure — Complete Collection"
+            loading="lazy"
+            onerror="this.src='assets/images/mockups/C01-group-flatlay.png'"
+          >
+          <div class="origin-img-badge">
+            <div class="badge-num">4</div>
+            <div class="badge-label">Ancient Remedies</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       STATS STRIP
+  ══════════════════════════════════════════════ -->
+  <section class="stats-strip">
+    <div class="stats-grid">
+
+      <div class="stat-item reveal">
+        <span class="stat-number" data-count="3300">0</span>
+        <p class="stat-label">Years of Black Seed use documented in history</p>
+        <p class="stat-context">Egypt · Since Tutankhamun</p>
+      </div>
+
+      <div class="stat-item reveal reveal-delay-1">
+        <span class="stat-number" data-count="92">0</span>
+        <p class="stat-label">Nutrients found in Moringa alone</p>
+        <p class="stat-context">The Miracle Tree · Sub-Saharan Africa</p>
+      </div>
+
+      <div class="stat-item reveal reveal-delay-2">
+        <span class="stat-number" data-count="0">0</span>
+        <p class="stat-label">Additives, fillers, or artificial ingredients</p>
+        <p class="stat-context">Pure · Uncompromised · Always</p>
+      </div>
+
+      <div class="stat-item reveal reveal-delay-3">
+        <span class="stat-number" data-count="4">0</span>
+        <p class="stat-label">Ancient remedies in our complete collection</p>
+        <p class="stat-context">Four Products · One Philosophy</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       INGREDIENTS TIMELINE
+  ══════════════════════════════════════════════ -->
+  <section class="ingredients-section">
+
+    <div class="ingredients-header reveal">
+      <p class="section-label">The Healing Arsenal</p>
+      <h2>Centuries of Proof.<br>One Collection.</h2>
+      <p>Each ingredient carries a story older than any modern laboratory. We didn't invent these remedies — we protect them.</p>
+    </div>
+
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+
+      <!-- ── PRODUCT 1: Back to Eden ───────────── -->
+      <div class="ingredient-row">
+        <!-- Visual -->
+        <div class="ingredient-visual">
+          <div class="ingredient-img-wrap glass-deep">
+            <div class="ingredient-glow"></div>
+            <img
+              src="assets/images/mockups/A01-hero-back-to-eden.png"
+              alt="Back to Eden — Six Sacred Spices"
+              loading="lazy"
+            >
+          </div>
+        </div>
+
+        <!-- Timeline center dot -->
+        <div class="ingredient-center">
+          <div class="timeline-dot"></div>
+        </div>
+
+        <!-- Text -->
+        <div class="ingredient-text">
+          <p class="ingredient-origin">Mesopotamia &amp; Beyond &nbsp;·&nbsp; Ancient</p>
+          <h3 class="ingredient-name">Back to Eden</h3>
+          <p class="ingredient-desc">
+            Six of the most studied healing spices on earth, combined into one sacred formula.
+            Used from the ancient Middle East to sub-Saharan Africa for thousands of years — before
+            the world had a word for medicine, these spices were the cure.
+          </p>
+          <div style="width:100%;height:64px;border-radius:8px;overflow:hidden;margin:16px 0 0;position:relative;" aria-hidden="true">
+            <img src="assets/images/ingredients-spices.jpg" alt="" loading="lazy"
+                 style="width:100%;height:100%;object-fit:cover;object-position:center 55%;opacity:0.75;">
+            <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,8,6,0.5) 0%,transparent 30%,transparent 70%,rgba(10,8,6,0.5) 100%);"></div>
+          </div>
+          <div class="benefit-pills">
+            <span class="pill">Cayenne</span>
+            <span class="pill">Fenugreek</span>
+            <span class="pill">Garlic</span>
+          </div>
+          <div class="ingredient-action">
+            <span class="ingredient-price">R210</span>
+            <a href="shop.html" class="ingredient-link">
+              View Product
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 8h10M9 4l4 4-4 4"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PRODUCT 2: Moringa ────────────────── -->
+      <div class="ingredient-row reverse">
+        <!-- Text -->
+        <div class="ingredient-text">
+          <p class="ingredient-origin">Sub-Saharan Africa &nbsp;·&nbsp; 10,000 Years</p>
+          <h3 class="ingredient-name">Moringa</h3>
+          <p class="ingredient-desc">
+            The miracle tree that grows in the harshest conditions and delivers more nutrition
+            than almost any other plant. Africa knew first. Long before the West discovered it,
+            our ancestors called it the Tree of Life — and they were right.
+          </p>
+          <div style="width:100%;height:64px;border-radius:8px;overflow:hidden;margin:16px 0 0;position:relative;" aria-hidden="true">
+            <img src="assets/images/moringa-leaves.jpg" alt="" loading="lazy"
+                 style="width:100%;height:100%;object-fit:cover;object-position:center 40%;opacity:0.75;">
+            <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,8,6,0.5) 0%,transparent 30%,transparent 70%,rgba(10,8,6,0.5) 100%);"></div>
+          </div>
+          <div class="benefit-pills">
+            <span class="pill">92 Nutrients</span>
+            <span class="pill">46 Antioxidants</span>
+            <span class="pill">Complete Protein</span>
+          </div>
+          <div class="ingredient-action">
+            <span class="ingredient-price">R200</span>
+            <a href="shop.html" class="ingredient-link">
+              View Product
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 8h10M9 4l4 4-4 4"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Timeline center dot -->
+        <div class="ingredient-center">
+          <div class="timeline-dot"></div>
+        </div>
+
+        <!-- Visual -->
+        <div class="ingredient-visual">
+          <div class="ingredient-img-wrap glass-deep">
+            <div class="ingredient-glow" style="background: radial-gradient(circle at center, rgba(74,124,89,0.15) 0%, transparent 60%);"></div>
+            <img
+              src="assets/images/mockups/A02-hero-moringa.png"
+              alt="Moringa — The Miracle Tree"
+              loading="lazy"
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PRODUCT 3: Black Seed ─────────────── -->
+      <div class="ingredient-row">
+        <!-- Visual -->
+        <div class="ingredient-visual">
+          <div class="ingredient-img-wrap glass-deep">
+            <div class="ingredient-glow"></div>
+            <img
+              src="assets/images/mockups/A03-hero-blackseed.png"
+              alt="Black Seed — The Blessed Seed"
+              loading="lazy"
+            >
+          </div>
+        </div>
+
+        <!-- Timeline center dot -->
+        <div class="ingredient-center">
+          <div class="timeline-dot"></div>
+        </div>
+
+        <!-- Text -->
+        <div class="ingredient-text">
+          <p class="ingredient-origin">Egypt &amp; Arabia &nbsp;·&nbsp; 3,300 BCE</p>
+          <h3 class="ingredient-name">Black Seed</h3>
+          <p class="ingredient-desc">
+            Found in Tutankhamun's tomb. Mentioned in the Hadith as a cure for everything
+            except death. Studied in over 100 peer-reviewed journals. Thymoquinone —
+            its miracle compound — is one of the most researched natural substances in existence.
+          </p>
+          <div style="width:100%;height:64px;border-radius:8px;overflow:hidden;margin:16px 0 0;position:relative;" aria-hidden="true">
+            <img src="assets/images/black-seed-closeup.jpg" alt="" loading="lazy"
+                 style="width:100%;height:100%;object-fit:cover;object-position:center 50%;opacity:0.75;">
+            <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,8,6,0.5) 0%,transparent 30%,transparent 70%,rgba(10,8,6,0.5) 100%);"></div>
+          </div>
+          <div class="benefit-pills">
+            <span class="pill">Anti-inflammatory</span>
+            <span class="pill">Immune Support</span>
+            <span class="pill">Antifungal</span>
+          </div>
+          <div class="ingredient-action">
+            <span class="ingredient-price">R220</span>
+            <a href="shop.html" class="ingredient-link">
+              View Product
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 8h10M9 4l4 4-4 4"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PRODUCT 4: Black Molasses ─────────── -->
+      <div class="ingredient-row reverse">
+        <!-- Text -->
+        <div class="ingredient-text">
+          <p class="ingredient-origin">Caribbean &amp; Africa &nbsp;·&nbsp; 500 Years</p>
+          <h3 class="ingredient-name">Black Molasses</h3>
+          <p class="ingredient-desc">
+            Everything the sugar refining process strips away — reclaimed. More calcium than
+            milk. More iron than eggs. The concentrated minerals your body craves, in the form
+            your body was built to absorb. Nothing added. Nothing lost.
+          </p>
+          <div style="width:100%;height:64px;border-radius:8px;overflow:hidden;margin:16px 0 0;position:relative;" aria-hidden="true">
+            <img src="assets/images/molasses-pour.jpg" alt="" loading="lazy"
+                 style="width:100%;height:100%;object-fit:cover;object-position:center 50%;opacity:0.75;">
+            <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,8,6,0.5) 0%,transparent 30%,transparent 70%,rgba(10,8,6,0.5) 100%);"></div>
+          </div>
+          <div class="benefit-pills">
+            <span class="pill">Calcium</span>
+            <span class="pill">Iron</span>
+            <span class="pill">Magnesium</span>
+          </div>
+          <div class="ingredient-action">
+            <span class="ingredient-price">R190</span>
+            <a href="shop.html" class="ingredient-link">
+              View Product
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 8h10M9 4l4 4-4 4"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Timeline center dot -->
+        <div class="ingredient-center">
+          <div class="timeline-dot"></div>
+        </div>
+
+        <!-- Visual -->
+        <div class="ingredient-visual">
+          <div class="ingredient-img-wrap glass-deep">
+            <div class="ingredient-glow" style="background: radial-gradient(circle at center, rgba(139,94,60,0.18) 0%, transparent 60%);"></div>
+            <img
+              src="assets/images/mockups/A04-hero-molasses-bottle.png"
+              alt="Black Molasses — Ancient Mineral"
+              loading="lazy"
+            >
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /timeline-container -->
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       PHILOSOPHY
+  ══════════════════════════════════════════════ -->
+  <section class="philosophy-section">
+    <!-- Wellness portrait bg — humanity behind the philosophy -->
+    <div style="position:absolute;inset:0;z-index:0;pointer-events:none;" aria-hidden="true">
+      <img class="philosophy-bg-img" src="assets/images/african-woman-wellness.jpg" alt=""
+           style="width:100%;height:100%;object-fit:cover;object-position:center 25%;opacity:0.09;"
+           onerror="this.parentElement.style.display='none'">
+      <div class="philosophy-bg-overlay" style="position:absolute;inset:0;background:radial-gradient(ellipse 85% 75% at 50% 50%,rgba(10,8,6,0.4) 0%,rgba(10,8,6,0.94) 80%);"></div>
+    </div>
+    <div class="philosophy-grain"></div>
+    <div class="philosophy-glow-left"></div>
+    <div class="philosophy-glow-right"></div>
+
+    <div class="philosophy-content reveal">
+      <p class="philosophy-eyebrow">Our Philosophy</p>
+
+      <blockquote class="philosophy-quote">
+        <em>"Purity is not a marketing word.</em>
+        It is our only product."
+      </blockquote>
+
+      <div class="philosophy-rule"></div>
+
+      <p class="philosophy-sub">
+        We make four things. We make them purely.
+        We make them for the people who are done compromising.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       VALUES
+  ══════════════════════════════════════════════ -->
+  <section class="values-section">
+    <div class="values-inner">
+      <div class="values-header reveal">
+        <p class="values-label">What We Stand For</p>
+        <h2 class="values-title">Three Promises.<br>No Exceptions.</h2>
+      </div>
+
+      <div class="values-grid">
+
+        <div class="value-card reveal">
+          <p class="value-number">01</p>
+          <h3 class="value-name">Purity First</h3>
+          <p class="value-desc">
+            We source every ingredient at its most natural state. Nothing is added that nature didn't intend.
+            If it doesn't grow, it doesn't go in. The formula is the earth — and the earth is enough.
+          </p>
+          <div class="value-icon-wrap">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 2C8 2 3 5 3 9a5 5 0 0010 0C13 5 8 2 8 2z"/>
+              <path d="M8 6v4M6 8h4"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="value-card reveal reveal-delay-1">
+          <p class="value-number">02</p>
+          <h3 class="value-name">Ancient Roots</h3>
+          <p class="value-desc">
+            Our formulas draw from thousands of years of human wisdom — Egyptian papyri, Ayurvedic texts,
+            African herbalism, and Islamic medicine. We stand on the shoulders of every healer who came before us.
+          </p>
+          <div class="value-icon-wrap">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="8" r="6"/>
+              <path d="M8 4v4l3 2"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="value-card reveal reveal-delay-2">
+          <p class="value-number">03</p>
+          <h3 class="value-name">Modern Proof</h3>
+          <p class="value-desc">
+            We don't ask you to take our word for it. Every ingredient is supported by published,
+            peer-reviewed research. Ancient wisdom confirmed by science — not replaced by it.
+          </p>
+          <div class="value-icon-wrap">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2h4v3l2 2v5H4V7l2-2V2z"/>
+              <path d="M4 7h8"/>
+              <path d="M6 10h4"/>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       MARQUEE
+  ══════════════════════════════════════════════ -->
+  <div class="section-marquee">
+    <div class="marquee-track">
+      <span class="marquee-item">Pure Since Creation</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">Black Seed &middot; 3,300 BCE</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">Moringa &middot; Tree of Life</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">No Additives. No Fillers.</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">From the Earth, For the Body</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">Ancient Wisdom. Modern Proof.</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="marquee-item">Pure Since Creation</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">Black Seed &middot; 3,300 BCE</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">Moringa &middot; Tree of Life</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">No Additives. No Fillers.</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">From the Earth, For the Body</span>
+      <span class="marquee-item marquee-dot">✦</span>
+      <span class="marquee-item">Ancient Wisdom. Modern Proof.</span>
+      <span class="marquee-item marquee-dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CTA — READY TO BEGIN?
+  ══════════════════════════════════════════════ -->
+  <section class="cta-section">
+    <div class="cta-orb"></div>
+
+    <div class="cta-content reveal">
+      <p class="cta-label">Take the First Step</p>
+
+      <h2 class="cta-headline">Ready to<br>Begin?</h2>
+
+      <p class="cta-sub">
+        Your first step back to nature.
+        Your body will know the difference.
+      </p>
+
+      <div class="cta-actions">
+        <a href="shop.html" class="btn btn-gold btn-lg">
+          Shop the Collection
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
+        <a href="index.html" class="btn btn-ghost btn-lg">
+          Learn More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div>
+        <div class="footer-brand" style="display:flex;align-items:center;gap:10px;">
+          <img src="assets/favicon.svg" class="footer-logo-icon" alt="" aria-hidden="true" width="32" height="32">
+          <span>Eden<span>'</span>s Cure</span>
+        </div>
+        <p class="footer-tagline">
+          Ancient remedies. Pure ingredients. Formulated from four of nature's most powerful healers — unchanged by time, uncompromised by commerce.
+        </p>
+      </div>
+
+      <!-- Products -->
+      <div>
+        <p class="footer-heading">Products</p>
+        <ul class="footer-links">
+          <li><a href="shop.html">Back to Eden</a></li>
+          <li><a href="shop.html">Moringa</a></li>
+          <li><a href="shop.html">Black Seed</a></li>
+          <li><a href="shop.html">Black Molasses</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <p class="footer-heading">Company</p>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+        </ul>
+      </div>
+
+      <!-- Connect -->
+      <div>
+        <p class="footer-heading">Connect</p>
+        <ul class="footer-links">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2025 Eden's Cure. All rights reserved.</p>
+      <div class="footer-socials">
+        <!-- Instagram -->
+        <a href="#" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+          </svg>
+        </a>
+        <!-- Facebook -->
+        <a href="#" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+          </svg>
+        </a>
+        <!-- WhatsApp -->
+        <a href="#" aria-label="WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══ TRIBUTE ══════════════════════════════════════════ -->
+  <section class="tribute-section" aria-label="Dedication to Abba Shomriel Ben Israel">
+    <div class="tribute-inner">
+      <div class="tribute-portrait-wrap">
+        <div class="tribute-portrait-ring"></div>
+        <div class="tribute-portrait">
+          <img src="assets/images/abba-shomriel-portrait.jpg" alt="Abba Shomriel Ben Israel — Herbalist and Natural Healer" loading="lazy">
+        </div>
+      </div>
+      <div class="tribute-text">
+        <p class="tribute-eyebrow">In Loving Memory</p>
+        <h2 class="tribute-name">Abba Shomriel<br>Ben Israel</h2>
+        <p class="tribute-title">Herbalist &amp; Natural Healer</p>
+        <div class="tribute-rule"></div>
+        <blockquote class="tribute-quote">
+          Whose unwavering love for people and dedication as a natural healer inspired this formula — and every remedy we make.
+        </blockquote>
+        <p class="tribute-sub">This collection exists because of him. Every product carries his spirit.</p>
+        <div class="tribute-downloads">
+          <a href="assets/docs/catalog-2026-web.pdf" download="EdensCure-Catalog-2026.pdf" class="tribute-dl-btn" aria-label="Download product catalog PDF">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download Catalog
+          </a>
+          <a href="assets/docs/price-list-2026-web.pdf" download="EdensCure-PriceList-2026.pdf" class="tribute-dl-btn" aria-label="Download price list PDF">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Price List
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════════════ -->
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Lenis smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+  <script>
+    /* ═══════════════════════════════════════════
+       LENIS SMOOTH SCROLL
+    ═══════════════════════════════════════════ */
+    let lenis;
+    if (window.Lenis) {
+      lenis = new Lenis({
+        duration: 1.2,
+        easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        wheelMultiplier: 0.8,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    }
+
+    /* ═══════════════════════════════════════════
+       NAV SCROLL EFFECT
+    ═══════════════════════════════════════════ */
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    /* ═══════════════════════════════════════════
+       HAMBURGER MENU
+    ═══════════════════════════════════════════ */
+    const hamburger = document.getElementById('hamburger');
+    const navMobile = document.getElementById('navMobile');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navMobile.classList.toggle('open');
+      document.body.style.overflow = navMobile.classList.contains('open') ? 'hidden' : '';
+    });
+
+    navMobile.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navMobile.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    /* ═══════════════════════════════════════════
+       CUSTOM CURSOR
+    ═══════════════════════════════════════════ */
+    const cursor = document.getElementById('cursor');
+    const cursorRing = document.getElementById('cursorRing');
+
+    if (cursor && window.innerWidth > 768) {
+      let mouseX = 0, mouseY = 0;
+      let ringX = 0, ringY = 0;
+
+      document.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+      });
+
+      function animateRing() {
+        ringX += (mouseX - ringX) * 0.12;
+        ringY += (mouseY - ringY) * 0.12;
+        cursorRing.style.left = ringX + 'px';
+        cursorRing.style.top = ringY + 'px';
+        requestAnimationFrame(animateRing);
+      }
+      animateRing();
+    }
+
+    /* ═══════════════════════════════════════════
+       SCROLL REVEAL (Intersection Observer)
+    ═══════════════════════════════════════════ */
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ═══════════════════════════════════════════
+       COUNTER ANIMATION
+    ═══════════════════════════════════════════ */
+    function animateCounter(el, target, duration = 1600) {
+      const start = Date.now();
+      const tick = () => {
+        const elapsed = Date.now() - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target).toLocaleString();
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+      tick();
+    }
+
+    const statObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = parseInt(entry.target.dataset.count);
+          animateCounter(entry.target, target);
+          statObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stat-number[data-count]').forEach(el => statObserver.observe(el));
+
+    /* ═══════════════════════════════════════════
+       GSAP SCROLL ANIMATIONS
+    ═══════════════════════════════════════════ */
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Ingredient rows — alternating slide in
+      document.querySelectorAll('.ingredient-row').forEach((row, i) => {
+        const dir = i % 2 === 0 ? -80 : 80;
+        const visualEl = row.querySelector('.ingredient-visual');
+        const textEl = row.querySelector('.ingredient-text');
+
+        if (visualEl) {
+          gsap.from(visualEl, {
+            x: dir,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: row,
+              start: 'top 75%',
+              once: true,
+            }
+          });
+        }
+
+        if (textEl) {
+          gsap.from(textEl, {
+            x: -dir,
+            opacity: 0,
+            duration: 1,
+            delay: 0.15,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: row,
+              start: 'top 75%',
+              once: true,
+            }
+          });
+        }
+      });
+
+      // Philosophy quote — split word reveal
+      const philQuote = document.querySelector('.philosophy-quote');
+      if (philQuote) {
+        gsap.from(philQuote, {
+          y: 60,
+          opacity: 0,
+          duration: 1.2,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: philQuote,
+            start: 'top 80%',
+            once: true,
+          }
+        });
+      }
+
+      // Stats strip parallax orb
+      const statsStrip = document.querySelector('.stats-strip');
+      if (statsStrip) {
+        gsap.to(statsStrip.querySelector('::before'), {
+          yPercent: -20,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: statsStrip,
+            scrub: 1,
+          }
+        });
+      }
+
+      // Value cards stagger
+      gsap.from('.value-card', {
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.values-grid',
+          start: 'top 80%',
+          once: true,
+        }
+      });
+
+      // CTA headline dramatic reveal
+      gsap.from('.cta-headline', {
+        y: 80,
+        opacity: 0,
+        duration: 1.4,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: '.cta-section',
+          start: 'top 70%',
+          once: true,
+        }
+      });
+
+      // Origin image — subtle parallax
+      const originImg = document.querySelector('.origin-img-frame img');
+      if (originImg) {
+        gsap.to(originImg, {
+          yPercent: -8,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.origin-section',
+            scrub: 1.5,
+          }
+        });
+      }
+
+      // Connect ScrollTrigger with Lenis
+      if (lenis) {
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add(time => {
+          if (lenis) lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+      }
+    }
+
+    /* ═══════════════════════════════════════════
+       INGREDIENT CARD — Glow on Hover
+    ═══════════════════════════════════════════ */
+    document.querySelectorAll('.ingredient-row').forEach(row => {
+      const glow = row.querySelector('.ingredient-glow');
+      const wrap = row.querySelector('.ingredient-img-wrap');
+
+      if (!wrap || !glow) return;
+
+      wrap.addEventListener('mousemove', e => {
+        const rect = wrap.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        glow.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(201,168,76,0.2) 0%, transparent 55%)`;
+      });
+
+      wrap.addEventListener('mouseleave', () => {
+        glow.style.background = 'radial-gradient(circle at center, rgba(201,168,76,0.12) 0%, transparent 60%)';
+      });
+    });
+  </script>
+  <script src="js/theme.js"></script>
+  <script src="js/cursor.js"></script>
+</body>
+</html>

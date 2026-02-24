@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Eden's Cure — Price List 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --forest: #1F3D1A;
+    --gold: #C4853A;
+    --cream: #F5F0E6;
+    --brown: #5C3A1E;
+    --black: #0D0B08;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', Arial, sans-serif;
+    color: var(--black);
+  }
+
+  .page {
+    width: 210mm; height: 297mm;
+    overflow: hidden; position: relative;
+    background: var(--cream);
+  }
+
+  /* Header */
+  .doc-header {
+    background: var(--forest);
+    padding: 10mm 20mm 9mm;
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: url('assets/textures/kente-07.jpg') repeat;
+    background-size: 40px; opacity: 0.04;
+  }
+  .header-inner { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: flex-end; }
+  .header-brand { }
+  .header-eyebrow { font-size: 7pt; letter-spacing: 4px; text-transform: uppercase; color: rgba(196,133,58,0.7); margin-bottom: 2mm; }
+  .header-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32pt; font-weight: 600; color: var(--cream); line-height: 1; }
+  .header-sub { font-size: 8pt; letter-spacing: 3px; text-transform: uppercase; color: rgba(245,240,230,0.4); margin-top: 1.5mm; }
+  .header-date { font-size: 7.5pt; color: rgba(196,133,58,0.6); text-align: right; }
+
+  /* Dedication strip */
+  .ded-strip {
+    background: rgba(31,61,26,0.06);
+    border-left: 3pt solid var(--gold);
+    padding: 5mm 12mm 5mm 8mm;
+    margin: 8mm 20mm;
+    display: flex; gap: 6mm; align-items: center;
+  }
+  .ded-portrait { width: 18mm; height: 22mm; border-radius: 1.5mm; overflow: hidden; flex-shrink: 0; }
+  .ded-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .ded-copy { flex: 1; }
+  .ded-label { font-size: 6.5pt; letter-spacing: 3px; text-transform: uppercase; color: rgba(196,133,58,0.7); margin-bottom: 1mm; }
+  .ded-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 13pt; font-weight: 600; color: var(--forest); line-height: 1.1; margin-bottom: 1mm; }
+  .ded-quote { font-size: 8pt; font-style: italic; color: rgba(13,11,8,0.55); line-height: 1.4; }
+
+  /* Table */
+  .price-table-wrap { padding: 0 20mm; margin-bottom: 6mm; }
+  .section-label {
+    font-size: 7pt; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 3mm; padding-bottom: 1.5mm;
+    border-bottom: 0.5pt solid rgba(196,133,58,0.3);
+  }
+
+  table { width: 100%; border-collapse: collapse; margin-bottom: 8mm; }
+  thead tr {
+    background: var(--forest);
+  }
+  thead th {
+    font-size: 7.5pt; font-weight: 500; letter-spacing: 2px;
+    text-transform: uppercase; color: rgba(245,240,230,0.7);
+    padding: 3mm 4mm; text-align: left;
+  }
+  thead th:last-child { text-align: right; }
+  tbody tr { border-bottom: 0.5pt solid rgba(31,61,26,0.1); }
+  tbody tr:nth-child(even) { background: rgba(31,61,26,0.03); }
+  tbody td { padding: 4mm 4mm; vertical-align: middle; }
+
+  .prod-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14pt; font-weight: 600; color: var(--forest); line-height: 1.1; }
+  .prod-sub { font-size: 7.5pt; color: rgba(13,11,8,0.5); font-style: italic; }
+  .prod-ingredients { font-size: 7pt; color: rgba(13,11,8,0.45); margin-top: 1mm; }
+  .prod-benefits { display: flex; flex-wrap: wrap; gap: 1.5mm; margin-top: 1.5mm; }
+  .prod-benefit { font-size: 6.5pt; border: 0.5pt solid rgba(31,61,26,0.2); color: var(--forest); padding: 0.5mm 2mm; }
+  .size-cell { font-size: 9pt; color: rgba(13,11,8,0.6); }
+  .price-cell { text-align: right; }
+  .price-main { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18pt; font-weight: 700; color: var(--forest); }
+  .price-per { font-size: 7.5pt; color: rgba(13,11,8,0.4); display: block; }
+
+  /* Bundle rows */
+  .bundle-row td { padding: 3mm 4mm; }
+  .bundle-name { font-size: 10pt; font-weight: 500; color: var(--forest); }
+  .bundle-desc { font-size: 7.5pt; color: rgba(13,11,8,0.5); font-style: italic; }
+  .bundle-saving {
+    display: inline-block; font-size: 7pt; font-weight: 600;
+    background: rgba(196,133,58,0.15); color: var(--gold);
+    padding: 0.5mm 2.5mm; border-radius: 0.5mm; margin-left: 2mm;
+  }
+
+  /* Terms */
+  .terms-box {
+    margin: 0 20mm;
+    border: 0.5pt solid rgba(31,61,26,0.12);
+    padding: 5mm 7mm;
+    background: rgba(31,61,26,0.03);
+    border-radius: 1mm;
+  }
+  .terms-title { font-size: 7.5pt; font-weight: 600; color: var(--forest); letter-spacing: 1px; margin-bottom: 2.5mm; }
+  .terms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5mm 8mm; }
+  .term-item { font-size: 7.5pt; color: rgba(13,11,8,0.6); line-height: 1.4; }
+  .term-item strong { color: var(--forest); font-weight: 500; }
+
+  /* Footer */
+  .page-footer {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 20mm;
+    border-top: 0.5pt solid rgba(31,61,26,0.15);
+    padding: 0 20mm;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-left { }
+  .footer-brand { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 12pt; font-weight: 600; color: var(--forest); }
+  .footer-contact { font-size: 7pt; color: rgba(13,11,8,0.4); margin-top: 1mm; line-height: 1.4; }
+  .footer-contact a { color: var(--gold); }
+  .footer-qr-block { text-align: center; }
+  .footer-qr { width: 14mm; height: 14mm; padding: 1mm; background: var(--cream); border: 0.5pt solid rgba(31,61,26,0.15); }
+  .footer-qr img { width: 100%; height: 100%; }
+  .footer-scan { font-size: 6.5pt; letter-spacing: 1px; color: rgba(13,11,8,0.35); margin-top: 1mm; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="doc-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <p class="header-eyebrow">Ancient Wisdom · Natural Healing</p>
+        <h1 class="header-title">Eden's Cure</h1>
+        <p class="header-sub">Official Price List · 2026</p>
+      </div>
+      <div class="header-date">
+        Effective: February 2026<br>
+        <span style="opacity:0.5;">Prices in South African Rand (ZAR)</span><br>
+        <span style="opacity:0.5;">Incl. VAT where applicable</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dedication strip -->
+  <div class="ded-strip">
+    <div class="ded-portrait">
+      <img src="assets/images/abba-shomriel-portrait.jpg" alt="Abba Shomriel Ben Israel">
+    </div>
+    <div class="ded-copy">
+      <p class="ded-label">Dedicated In Honour Of</p>
+      <p class="ded-name">Abba Shomriel Ben Israel</p>
+      <p class="ded-quote">"Herbalist &amp; Natural Healer — whose love for people inspired these formulas."</p>
+    </div>
+  </div>
+
+  <!-- Products table -->
+  <div class="price-table-wrap">
+    <p class="section-label">Individual Products</p>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:50%">Product</th>
+          <th>Size</th>
+          <th style="text-align:right">Price (ZAR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="prod-name">Back to Eden Powder</div>
+            <div class="prod-sub">Six Sacred Spices — Cayenne, Fenugreek, Garlic, Ginger, Turmeric, Cinnamon</div>
+            <div class="prod-benefits">
+              <span class="prod-benefit">Immunity</span>
+              <span class="prod-benefit">Circulation</span>
+              <span class="prod-benefit">Anti-inflammatory</span>
+            </div>
+          </td>
+          <td class="size-cell">200g</td>
+          <td class="price-cell">
+            <div class="price-main">R165</div>
+            <span class="price-per">R0.83 / gram</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="prod-name">Moringa Leaf Powder</div>
+            <div class="prod-sub">100% Moringa Oleifera — The Miracle Tree · 95 nutrients</div>
+            <div class="prod-benefits">
+              <span class="prod-benefit">92 Nutrients</span>
+              <span class="prod-benefit">Energy</span>
+              <span class="prod-benefit">Complete Protein</span>
+            </div>
+          </td>
+          <td class="size-cell">100g</td>
+          <td class="price-cell">
+            <div class="price-main">R200</div>
+            <span class="price-per">R2.00 / gram</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="prod-name">Kammon Black Seed</div>
+            <div class="prod-sub">100% Nigella Sativa — Used since 3,300 BCE</div>
+            <div class="prod-benefits">
+              <span class="prod-benefit">Immune Support</span>
+              <span class="prod-benefit">Antifungal</span>
+              <span class="prod-benefit">Thymoquinone</span>
+            </div>
+          </td>
+          <td class="size-cell">50g</td>
+          <td class="price-cell">
+            <div class="price-main">R90</div>
+            <span class="price-per">R1.80 / gram</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="prod-name">Blackstrap Molasses</div>
+            <div class="prod-sub">100% Pure Unsulfured — Calcium, Iron, Magnesium, B Vitamins</div>
+            <div class="prod-benefits">
+              <span class="prod-benefit">Calcium</span>
+              <span class="prod-benefit">Iron</span>
+              <span class="prod-benefit">Magnesium</span>
+            </div>
+          </td>
+          <td class="size-cell">500ml</td>
+          <td class="price-cell">
+            <div class="price-main">R85</div>
+            <span class="price-per">R0.17 / ml</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Bundles -->
+    <p class="section-label">Bundle Deals</p>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:55%">Bundle</th>
+          <th>Contents</th>
+          <th style="text-align:right">Price (ZAR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bundle-row">
+          <td>
+            <div class="bundle-name">Complete Healing Bundle<span class="bundle-saving">Save R55</span></div>
+            <div class="bundle-desc">All four remedies — the complete collection</div>
+          </td>
+          <td class="size-cell" style="font-size:7.5pt;">Back to Eden + Moringa + Black Seed + Molasses</td>
+          <td class="price-cell"><div class="price-main">R485</div><span class="price-per">Value: R540</span></td>
+        </tr>
+        <tr class="bundle-row">
+          <td>
+            <div class="bundle-name">Starter Duo<span class="bundle-saving">Save R20</span></div>
+            <div class="bundle-desc">Back to Eden + Moringa — the most popular pair</div>
+          </td>
+          <td class="size-cell" style="font-size:7.5pt;">Back to Eden + Moringa</td>
+          <td class="price-cell"><div class="price-main">R345</div><span class="price-per">Value: R365</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <!-- Terms -->
+  <div class="terms-box">
+    <p class="terms-title">Order &amp; Delivery Terms</p>
+    <div class="terms-grid">
+      <div class="term-item"><strong>Delivery:</strong> R60 flat rate · Free over R500</div>
+      <div class="term-item"><strong>Payment:</strong> EFT · Cash · WhatsApp Pay</div>
+      <div class="term-item"><strong>Processing:</strong> 1–2 business days</div>
+      <div class="term-item"><strong>Delivery time:</strong> 3–5 business days (SA)</div>
+      <div class="term-item"><strong>Returns:</strong> 7-day return on unopened products</div>
+      <div class="term-item"><strong>Wholesale:</strong> Contact for bulk pricing</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="page-footer">
+    <div class="footer-left">
+      <div class="footer-brand">Eden's Cure</div>
+      <div class="footer-contact">
+        info@edenscurelife.co.za · +27 81 429 8709<br>
+        www.edenscurelife.co.za · 17 Wattle Street, Florida Park
+      </div>
+    </div>
+    <div class="footer-qr-block">
+      <div class="footer-qr"><img src="assets/qr-website.png" alt="Scan"></div>
+      <div class="footer-scan">Scan to order</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kammon Black Seed — Eden's Cure | R310</title>
+  <meta name="description" content="The prophetic seed — a cure for everything except death. Pure Nigella Sativa (Black Seed) powder. Immune, respiratory, and full-body support. Eden's Cure — R310 / 50g.">
+  <meta name="theme-color" content="#1F3D1A">
+
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/favicon-32.png">
+
+  <meta property="og:type" content="product">
+  <meta property="og:site_name" content="Eden's Cure">
+  <meta property="og:title" content="Kammon Black Seed — Eden's Cure">
+  <meta property="og:description" content="The seed for everything except death. Pure Nigella Sativa.">
+  <meta property="og:image" content="https://www.edenscurelife.co.za/assets/og-share.jpg">
+  <meta property="og:url" content="https://www.edenscurelife.co.za/product-black-seed.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/product-pages.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script src="js/theme.js"></script>
+</head>
+<body>
+
+  <!-- ══ NAV ══════════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/favicon.svg" class="nav-logo-icon" alt="" aria-hidden="true" width="30" height="30">
+      Eden's <span>Cure</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="journal.html">Journal</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun"  viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <a href="shop.html" class="btn btn-gold nav-btn-desktop" style="padding: 11px 26px; font-size: 12px;">Shop Now</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="journal.html">Journal</a>
+    <a href="shop.html" class="btn btn-gold" style="margin-top:16px;">Shop Now</a>
+  </div>
+
+  <!-- ══ BREADCRUMB ════════════════════════════════════════ -->
+  <nav class="pdp-breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="pdp-bc-sep">/</span>
+    <a href="shop.html">Shop</a>
+    <span class="pdp-bc-sep">/</span>
+    <span class="pdp-bc-current">Black Seed</span>
+  </nav>
+
+  <!-- ══ PRODUCT MAIN ══════════════════════════════════════ -->
+  <section class="pdp-main">
+    <div class="pdp-grid">
+
+      <!-- Gallery -->
+      <div class="pdp-gallery" id="pdpGallery">
+        <div class="pdp-main-img-wrap">
+          <div class="pdp-img-glow"></div>
+          <img
+            id="mainImg"
+            class="pdp-main-img"
+            src="assets/images/mockups/A03-hero-blackseed.png"
+            alt="Kammon Black Seed — 50g"
+            onerror="this.style.opacity='0.3'"
+          >
+        </div>
+        <div class="pdp-thumbs">
+          <div class="pdp-thumb active" data-img="assets/images/mockups/A03-hero-blackseed.png" data-alt="Kammon Black Seed front">
+            <img src="assets/images/mockups/A03-hero-blackseed.png" alt="" loading="lazy" onerror="this.parentElement.style.opacity='0.4'">
+          </div>
+          <div class="pdp-thumb" data-img="assets/images/mockups/B03-alt-blackseed.png" data-alt="Black Seed alternate view">
+            <img src="assets/images/mockups/B03-alt-blackseed.png" alt="" loading="lazy" onerror="this.parentElement.style.opacity='0.4'">
+          </div>
+          <div class="pdp-thumb" data-img="assets/images/black-seed-closeup.jpg" data-alt="Black seed close-up">
+            <img src="assets/images/black-seed-closeup.jpg" alt="" loading="lazy" onerror="this.parentElement.style.opacity='0.4'">
+          </div>
+        </div>
+      </div>
+
+      <!-- Product info -->
+      <div class="pdp-info" id="pdpInfo">
+        <div class="pdp-badge">
+          <span class="pdp-badge-dot"></span>
+          Seeds · Prophetic Medicine
+        </div>
+
+        <h1 class="pdp-name">Kammon<br>Black Seed</h1>
+
+        <p class="pdp-tagline">"A cure for everything except death." — Said to be among the most powerful seeds in natural healing tradition.</p>
+
+        <div class="pdp-stars" aria-label="Rated 5.0 out of 5">
+          <div class="pdp-stars-row">
+            <svg class="pdp-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="pdp-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="pdp-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="pdp-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="pdp-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          </div>
+          <span class="pdp-rating-text">5.0 · 38 reviews</span>
+        </div>
+
+        <div class="pdp-price-row">
+          <div class="pdp-price" aria-label="Price R310">R 310</div>
+          <div class="pdp-size-tag">50g</div>
+        </div>
+        <p class="pdp-vat-note">VAT incl. · Free shipping on orders over R500</p>
+
+        <div class="pdp-divider"></div>
+
+        <p class="pdp-benefits-label">Key Benefits</p>
+        <ul class="pdp-benefits" id="pdpBenefits">
+          <li>
+            <svg class="pdp-benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+            Powerful immune support
+          </li>
+          <li>
+            <svg class="pdp-benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+            Respiratory health
+          </li>
+          <li>
+            <svg class="pdp-benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+            Anti-bacterial and anti-fungal
+          </li>
+          <li>
+            <svg class="pdp-benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+            Inflammation reduction
+          </li>
+          <li>
+            <svg class="pdp-benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+            Thymoquinone (TQ) rich
+          </li>
+          <li>
+            <svg class="pdp-benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+            Supports healthy blood pressure
+          </li>
+        </ul>
+
+        <div class="pdp-purchase">
+          <div class="pdp-qty" role="group" aria-label="Quantity">
+            <button class="pdp-qty-btn" id="qtyMinus" aria-label="Decrease quantity">−</button>
+            <div class="pdp-qty-num" id="qtyNum" aria-live="polite">1</div>
+            <button class="pdp-qty-btn" id="qtyPlus" aria-label="Increase quantity">+</button>
+          </div>
+          <button class="pdp-add-btn" id="addBtn" aria-label="Add Black Seed to cart">
+            Add to Cart
+          </button>
+        </div>
+
+        <a
+          href="https://wa.me/27814298709?text=Hi%2C%20I%27d%20like%20to%20order%20Kammon%20Black%20Seed%20(R310%2F50g)"
+          class="pdp-whatsapp"
+          target="_blank" rel="noopener"
+          aria-label="Order via WhatsApp"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Order via WhatsApp
+        </a>
+
+        <div class="pdp-trust" id="pdpTrust">
+          <div class="pdp-trust-item">
+            <svg class="pdp-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span class="pdp-trust-label">100%<br>Natural</span>
+          </div>
+          <div class="pdp-trust-item">
+            <svg class="pdp-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            <span class="pdp-trust-label">No<br>Additives</span>
+          </div>
+          <div class="pdp-trust-item">
+            <svg class="pdp-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-4m-3 0a2 2 0 11-4 0 2 2 0 014 0m7 0a2 2 0 11-4 0 2 2 0 014 0"/></svg>
+            <span class="pdp-trust-label">Free Ship<br>R500+</span>
+          </div>
+          <div class="pdp-trust-item">
+            <svg class="pdp-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            <span class="pdp-trust-label">Made with<br>Purpose</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TABS ══════════════════════════════════════════════ -->
+  <section class="pdp-tabs-section" aria-label="Product details">
+    <div class="pdp-tabs-inner">
+      <nav class="pdp-tabs-nav" aria-label="Product detail tabs">
+        <button class="pdp-tab-btn active" data-tab="overview">Overview</button>
+        <button class="pdp-tab-btn" data-tab="ingredients">Composition</button>
+        <button class="pdp-tab-btn" data-tab="howtouse">How to Use</button>
+        <button class="pdp-tab-btn" data-tab="research">Research</button>
+      </nav>
+
+      <!-- Overview -->
+      <div class="pdp-tab-panel active" id="tab-overview">
+        <div class="pdp-tab-panel-inner">
+          <div class="pdp-tab-text">
+            <h3>Revered across three millennia of healing</h3>
+            <p>Nigella Sativa — known as Black Seed, Kammon, or Habbatus Sauda — has been used as medicine since the time of ancient Egypt and is one of the most documented healing seeds in the world. The active compound Thymoquinone (TQ) is what modern science believes gives it much of its extraordinary potency.</p>
+            <p>Our Kammon Black Seed is ground from whole seeds, preserving the full-spectrum volatile oils, omega fatty acids, and TQ content. Nothing extracted. Nothing added.</p>
+            <ul class="pdp-tab-list">
+              <li>Thymoquinone — the master anti-inflammatory and immune-modulating compound</li>
+              <li>Broad-spectrum antimicrobial action against bacteria, viruses, and fungi</li>
+              <li>Respiratory support — historically used for asthma, bronchitis, and sinus conditions</li>
+              <li>Significant reduction in markers of systemic inflammation</li>
+              <li>Blood pressure and cholesterol management</li>
+              <li>Potent antioxidant protecting cells from oxidative stress</li>
+            </ul>
+          </div>
+          <div class="pdp-tab-img-wrap">
+            <img class="pdp-tab-img" src="assets/images/black-seed-closeup.jpg" alt="Black seed close-up" loading="lazy" onerror="this.parentElement.style.background='rgba(26,18,11,0.8)'">
+          </div>
+        </div>
+      </div>
+
+      <!-- Composition -->
+      <div class="pdp-tab-panel" id="tab-ingredients">
+        <div class="pdp-tab-panel-inner">
+          <div class="pdp-tab-text">
+            <h3>One seed. Extraordinary complexity.</h3>
+            <p>100% pure Nigella Sativa seed powder — cold-processed to preserve all volatile oils. No flowing agents, no anti-caking powder, no carrier oils added.</p>
+            <div class="pdp-ingredients-grid">
+              <div class="pdp-ingredient-card">
+                <div class="pdp-ingredient-name">Thymoquinone</div>
+                <div class="pdp-ingredient-origin">Primary active compound</div>
+              </div>
+              <div class="pdp-ingredient-card">
+                <div class="pdp-ingredient-name">Omega-6 fatty acids</div>
+                <div class="pdp-ingredient-origin">Linoleic acid</div>
+              </div>
+              <div class="pdp-ingredient-card">
+                <div class="pdp-ingredient-name">Omega-9 fatty acids</div>
+                <div class="pdp-ingredient-origin">Oleic acid</div>
+              </div>
+              <div class="pdp-ingredient-card">
+                <div class="pdp-ingredient-name">Volatile oils</div>
+                <div class="pdp-ingredient-origin">Thymol, carvacrol</div>
+              </div>
+              <div class="pdp-ingredient-card">
+                <div class="pdp-ingredient-name">Plant sterols</div>
+                <div class="pdp-ingredient-origin">Beta-sitosterol</div>
+              </div>
+              <div class="pdp-ingredient-card">
+                <div class="pdp-ingredient-name">Saponins</div>
+                <div class="pdp-ingredient-origin">Immune co-factors</div>
+              </div>
+            </div>
+          </div>
+          <div class="pdp-tab-img-wrap">
+            <img class="pdp-tab-img" src="assets/images/black-seed-closeup.jpg" alt="Nigella sativa seeds" loading="lazy" onerror="this.parentElement.style.background='rgba(26,18,11,0.8)'">
+          </div>
+        </div>
+      </div>
+
+      <!-- How to Use -->
+      <div class="pdp-tab-panel" id="tab-howtouse">
+        <div class="pdp-tab-panel-inner">
+          <div class="pdp-tab-text">
+            <h3>Small seed. Powerful protocol.</h3>
+            <p>Black Seed has a peppery, slightly bitter taste — it works best when taken directly or mixed with something sweet like honey. Consistency is key: 90 days of daily use is considered a full treatment cycle in traditional medicine.</p>
+            <ol class="pdp-steps">
+              <li class="pdp-step">
+                <div class="pdp-step-num">1</div>
+                <div>
+                  <div class="pdp-step-title">Honey Mix (Classic)</div>
+                  <div class="pdp-step-desc">Mix ½ teaspoon into a tablespoon of raw honey. Take on an empty stomach in the morning. This is the most traditional and effective method.</div>
+                </div>
+              </li>
+              <li class="pdp-step">
+                <div class="pdp-step-num">2</div>
+                <div>
+                  <div class="pdp-step-title">Warm Water Tonic</div>
+                  <div class="pdp-step-desc">Stir ½ teaspoon into warm water with lemon and a teaspoon of honey. Drink slowly, ideally 20 minutes before eating.</div>
+                </div>
+              </li>
+              <li class="pdp-step">
+                <div class="pdp-step-num">3</div>
+                <div>
+                  <div class="pdp-step-title">Direct Consumption</div>
+                  <div class="pdp-step-desc">Place ½ teaspoon on the tongue and swallow with water. Traditional practitioners recommend this for maximum potency — the taste is intense but effective.</div>
+                </div>
+              </li>
+              <li class="pdp-step">
+                <div class="pdp-step-num">4</div>
+                <div>
+                  <div class="pdp-step-title">Dosage</div>
+                  <div class="pdp-step-desc">½–1 teaspoon daily. Not recommended for pregnant women without medical guidance. Safe for children over 12 at half the adult dose.</div>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div class="pdp-tab-img-wrap">
+            <img class="pdp-tab-img" src="assets/images/black-seed-closeup.jpg" alt="Black seed with honey" loading="lazy" onerror="this.parentElement.style.background='rgba(26,18,11,0.8)'">
+          </div>
+        </div>
+      </div>
+
+      <!-- Research -->
+      <div class="pdp-tab-panel" id="tab-research">
+        <div class="pdp-tab-panel-inner">
+          <div class="pdp-tab-text">
+            <h3>Over 650 peer-reviewed studies published since 2000</h3>
+            <p>Nigella Sativa is among the most studied plants in pharmacognosy, with a remarkable breadth of documented effects. The science has moved from validating traditional claims to identifying specific mechanisms.</p>
+            <div class="pdp-research-list">
+              <div class="pdp-research-item">
+                <div class="pdp-research-title">Thymoquinone demonstrates broad-spectrum anti-tumour and immune-modulating activity in vitro and in vivo</div>
+                <div class="pdp-research-source">Cancer Cell International · 2021</div>
+                <div class="pdp-research-desc">Review of 89 studies identifies TQ's mechanisms of action across immune regulation, apoptosis induction, and anti-angiogenic activity.</div>
+              </div>
+              <div class="pdp-research-item">
+                <div class="pdp-research-title">Nigella Sativa significantly reduces blood pressure in hypertensive patients</div>
+                <div class="pdp-research-source">Journal of Hypertension · 2019</div>
+                <div class="pdp-research-desc">Meta-analysis of 11 RCTs (n=860) shows NS supplementation reduces systolic BP by 3.26 mmHg and diastolic BP by 3.03 mmHg on average.</div>
+              </div>
+              <div class="pdp-research-item">
+                <div class="pdp-research-title">Black Seed oil improves lung function and reduces asthma symptoms in a 3-month trial</div>
+                <div class="pdp-research-source">Phytotherapy Research · 2020</div>
+                <div class="pdp-research-desc">Double-blind RCT found Nigella Sativa supplementation significantly improved FEV1, FVC, and PEFR versus placebo in asthmatic adults, with no adverse effects.</div>
+              </div>
+            </div>
+          </div>
+          <div class="pdp-tab-img-wrap">
+            <img class="pdp-tab-img" src="assets/images/black-seed-closeup.jpg" alt="Black seed close-up detail" loading="lazy" onerror="this.parentElement.style.background='rgba(26,18,11,0.8)'">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ RELATED PRODUCTS ══════════════════════════════════ -->
+  <section class="pdp-related-section" aria-label="You may also like">
+    <div class="pdp-related-inner">
+      <div class="pdp-related-header">
+        <h2 class="pdp-related-title">Complete the Collection</h2>
+        <span class="pdp-related-sub">3 more remedies</span>
+      </div>
+      <div class="pdp-related-grid">
+        <a href="product-back-to-eden.html" class="pdp-related-card">
+          <div class="pdp-related-img-wrap">
+            <div class="pdp-related-img-glow"></div>
+            <img class="pdp-related-img" src="assets/images/mockups/A01-hero-back-to-eden.png" alt="Back to Eden Powder" loading="lazy" onerror="this.style.opacity='0.3'">
+          </div>
+          <div class="pdp-related-info">
+            <div class="pdp-related-name">Back to Eden</div>
+            <div class="pdp-related-desc">Six ancient roots in one signature blend</div>
+            <div class="pdp-related-footer">
+              <div class="pdp-related-price">R 290</div>
+              <div class="pdp-related-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg></div>
+            </div>
+          </div>
+        </a>
+        <a href="product-moringa.html" class="pdp-related-card">
+          <div class="pdp-related-img-wrap">
+            <div class="pdp-related-img-glow"></div>
+            <img class="pdp-related-img" src="assets/images/mockups/A02-hero-moringa.png" alt="Moringa Leaf Powder" loading="lazy" onerror="this.style.opacity='0.3'">
+          </div>
+          <div class="pdp-related-info">
+            <div class="pdp-related-name">Moringa Powder</div>
+            <div class="pdp-related-desc">95 nutrients from Africa's Miracle Tree</div>
+            <div class="pdp-related-footer">
+              <div class="pdp-related-price">R 280</div>
+              <div class="pdp-related-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg></div>
+            </div>
+          </div>
+        </a>
+        <a href="product-molasses.html" class="pdp-related-card">
+          <div class="pdp-related-img-wrap">
+            <div class="pdp-related-img-glow"></div>
+            <img class="pdp-related-img" src="assets/images/mockups/A04-hero-molasses-bottle.png" alt="Blackstrap Molasses" loading="lazy" onerror="this.style.opacity='0.3'">
+          </div>
+          <div class="pdp-related-info">
+            <div class="pdp-related-name">Black Molasses</div>
+            <div class="pdp-related-desc">Nature's most complete mineral tonic</div>
+            <div class="pdp-related-footer">
+              <div class="pdp-related-price">R 260</div>
+              <div class="pdp-related-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg></div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="assets/favicon.svg" class="footer-logo-icon" alt="" aria-hidden="true" width="36" height="36">
+            <span>Eden's <span style="color:var(--gold)">Cure</span></span>
+          </div>
+          <div class="footer-tagline-text">Ancient Wisdom. Modern Healing.</div>
+          <p class="footer-desc">Restoring what nature intended. Four pure remedies. Zero compromise. African heritage in every bottle.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Shop</div>
+          <ul class="footer-links">
+            <li><a href="product-back-to-eden.html">Back to Eden</a></li>
+            <li><a href="product-moringa.html">Moringa</a></li>
+            <li><a href="product-black-seed.html">Black Seed</a></li>
+            <li><a href="product-molasses.html">Black Molasses</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html">Ingredients</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Follow</div>
+          <ul class="footer-links">
+            <li><a href="https://instagram.com/edenscure" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://facebook.com/edenscure" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://wa.me/27814298709" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2026 Eden's Cure · <a href="https://edenscure.co.za">edenscure.co.za</a></div>
+        <div class="footer-made">Made with purpose in South Africa.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══ MOBILE STICKY BAR ═════════════════════════════════ -->
+  <div class="pdp-sticky-bar" id="stickyBar" aria-label="Quick add to cart">
+    <div class="pdp-sticky-left">
+      <div class="pdp-sticky-price">R 310</div>
+      <div class="pdp-sticky-name">Black Seed</div>
+    </div>
+    <button class="pdp-sticky-btn" id="stickyBtn" aria-label="Add to cart">Add to Cart</button>
+  </div>
+
+  <!-- ══ JAVASCRIPT ════════════════════════════════════════ -->
+  <script>
+  (function () {
+    'use strict';
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', function () { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', function () { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
+    document.querySelectorAll('.mobile-menu a').forEach(function (l) { l.addEventListener('click', function () { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }); });
+    const mainImg = document.getElementById('mainImg');
+    document.querySelectorAll('.pdp-thumb').forEach(function (thumb) {
+      thumb.addEventListener('click', function () {
+        document.querySelectorAll('.pdp-thumb').forEach(function (t) { t.classList.remove('active'); });
+        thumb.classList.add('active');
+        gsap.to(mainImg, { opacity: 0, scale: 0.97, duration: 0.18, ease: 'power2.in', onComplete: function () {
+          mainImg.src = thumb.dataset.img; mainImg.alt = thumb.dataset.alt || '';
+          gsap.to(mainImg, { opacity: 1, scale: 1, duration: 0.35, ease: 'power2.out' });
+        }});
+      });
+    });
+    var qty = 1;
+    var qtyNum = document.getElementById('qtyNum');
+    document.getElementById('qtyMinus').addEventListener('click', function () { if (qty > 1) { qty--; qtyNum.textContent = qty; } });
+    document.getElementById('qtyPlus').addEventListener('click', function () { qty++; qtyNum.textContent = qty; });
+    document.querySelectorAll('.pdp-tab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.pdp-tab-btn').forEach(function (b) { b.classList.remove('active'); });
+        document.querySelectorAll('.pdp-tab-panel').forEach(function (p) { p.classList.remove('active'); });
+        btn.classList.add('active');
+        var panel = document.getElementById('tab-' + btn.dataset.tab);
+        panel.classList.add('active');
+        gsap.fromTo(panel, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.38, ease: 'power2.out' });
+      });
+    });
+    function addToCart() {
+      var btn = document.getElementById('addBtn');
+      btn.textContent = 'Added to Cart'; btn.style.background = '#2C8A5B'; btn.style.color = '#fff';
+      setTimeout(function () { btn.textContent = 'Add to Cart'; btn.style.background = ''; btn.style.color = ''; }, 2000);
+    }
+    document.getElementById('addBtn').addEventListener('click', addToCart);
+    document.getElementById('stickyBtn').addEventListener('click', addToCart);
+    var stickyBar = document.getElementById('stickyBar');
+    new IntersectionObserver(function (e) { stickyBar.style.opacity = e[0].isIntersecting ? '0' : '1'; stickyBar.style.pointerEvents = e[0].isIntersecting ? 'none' : 'auto'; }).observe(document.getElementById('addBtn'));
+    var lenis = new Lenis({ duration: 1.15, easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); } });
+    function raf(t) { lenis.raf(t); requestAnimationFrame(raf); } requestAnimationFrame(raf);
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo('#pdpGallery', { opacity: 0, x: -36 }, { opacity: 1, x: 0, duration: 0.85, ease: 'power3.out', delay: 0.15 });
+    gsap.fromTo('#pdpInfo', { opacity: 0, x: 36 }, { opacity: 1, x: 0, duration: 0.85, ease: 'power3.out', delay: 0.3 });
+    gsap.fromTo('#pdpBenefits li', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45, stagger: 0.07, ease: 'power2.out', delay: 0.65 });
+    gsap.fromTo('#pdpTrust .pdp-trust-item', { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.45, stagger: 0.09, ease: 'power2.out', delay: 0.85 });
+    gsap.fromTo('.pdp-related-card', { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 0.65, stagger: 0.13, ease: 'power3.out', scrollTrigger: { trigger: '.pdp-related-section', start: 'top 82%' } });
+  }());
+  </script>
+
+</body>
+</html>
