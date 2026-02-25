@@ -429,6 +429,95 @@
       66% { transform: translateY(-8px) rotate(-0.3deg); }
     }
 
+    /* ═══════════════════════════════
+       3D PRODUCT CAROUSEL
+    ═══════════════════════════════ */
+    .hero-carousel {
+      position: relative;
+      z-index: 2;
+      width: clamp(280px, 42vw, 580px);
+      height: clamp(340px, 44vw, 600px);
+      perspective: 1100px;
+      cursor: pointer;
+    }
+    .carousel-ring {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.72s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .carousel-item {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* CRITICAL: match ring transition so counter-rotation stays in sync — product always faces front */
+      transition: transform 0.72s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .carousel-item img {
+      width: auto;
+      max-width: 88%;
+      height: 90%;
+      max-height: 520px;
+      object-fit: contain;
+      /* default: sides/back — will be overridden by data-pos=0 */
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5)) brightness(0.52);
+      transition: filter 0.55s ease, transform 0.55s ease;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+      display: block;
+    }
+    /* Front product: full brightness, rich glow, slightly larger */
+    .carousel-item[data-pos="0"] img {
+      filter: drop-shadow(0 32px 64px rgba(0,0,0,0.7))
+              drop-shadow(0 0 50px rgba(196,133,58,0.28))
+              drop-shadow(0 0 18px rgba(196,133,58,0.18))
+              brightness(1.08);
+      transform: scale(1.06);
+    }
+    /* 4-item ring: pos 1=sides, pos 2=back */
+    .carousel-item[data-pos="1"] img {
+      filter: drop-shadow(0 16px 32px rgba(0,0,0,0.45)) brightness(0.48);
+      transform: scale(0.94);
+    }
+    .carousel-item[data-pos="2"] img {
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.35)) brightness(0.15);
+      transform: scale(0.88);
+    }
+    .carousel-dots {
+      position: absolute;
+      bottom: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 3;
+    }
+    .carousel-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.22);
+      cursor: pointer;
+      transition: all 300ms;
+      border: none;
+      padding: 0;
+      outline: none;
+    }
+    .carousel-dot.active {
+      background: #C9A84C;
+      transform: scale(1.5);
+    }
+    @media (max-width: 960px) {
+      .hero-carousel {
+        width: clamp(260px, 78vw, 400px);
+        height: clamp(300px, 74vw, 460px);
+      }
+    }
+
     /* Ingredient bubbles */
     .ingredient-bubble {
       position: absolute;
@@ -1443,25 +1532,33 @@
         </div>
       </div>
 
-      <!-- RIGHT: Visual -->
+      <!-- RIGHT: 3D Product Carousel -->
       <div class="hero-visual">
         <div class="hero-visual-glow"></div>
 
-        <!-- Ingredient bubbles -->
-        <div class="ingredient-bubble b1">Cayenne</div>
-        <div class="ingredient-bubble b2">Moringa</div>
-        <div class="ingredient-bubble b3">Fenugreek</div>
-        <div class="ingredient-bubble b4">Black Seed</div>
-        <div class="ingredient-bubble b5">Turmeric</div>
-        <div class="ingredient-bubble b6">Cinnamon</div>
+        <div class="hero-carousel" id="heroCarousel" aria-label="Product showcase" role="region">
+          <div class="carousel-ring" id="carouselRing">
+            <div class="carousel-item">
+              <img src="assets/images/cutouts/A01-hero-back-to-eden_cutout.png" alt="Back to Eden Powder" loading="eager" draggable="false">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/cutouts/A02-hero-moringa_cutout.png" alt="Moringa Powder" loading="eager" draggable="false">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/cutouts/A03-hero-blackseed_cutout.png" alt="Black Seed" loading="lazy" draggable="false">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/cutouts/A04-hero-molasses-bottle_cutout.png" alt="Black Molasses" loading="lazy" draggable="false">
+            </div>
+          </div>
+          <div class="carousel-dots" id="carouselDots">
+            <button class="carousel-dot" aria-label="Back to Eden"></button>
+            <button class="carousel-dot" aria-label="Moringa"></button>
+            <button class="carousel-dot" aria-label="Black Seed"></button>
+            <button class="carousel-dot" aria-label="Black Molasses"></button>
+          </div>
+        </div>
 
-        <img
-          class="hero-product-img"
-          src="assets/images/mockups/C02-group-hero-standing.png"
-          alt="Eden's Cure — four natural healing products"
-          loading="eager"
-          onerror="this.style.opacity='0'"
-        >
       </div>
 
     </div>
@@ -1547,7 +1644,7 @@
             <div class="product-img-glow" style="background: radial-gradient(circle, rgba(201,168,76,0.7) 0%, transparent 70%);"></div>
             <img
               class="product-img"
-              src="assets/images/mockups/A01-hero-back-to-eden.png"
+              src="assets/images/cutouts/A01-hero-back-to-eden_cutout.png"
               alt="Back to Eden — Six Sacred Herbs"
               loading="lazy"
               onerror="this.style.opacity='0.3'"
@@ -1581,7 +1678,7 @@
             <div class="product-img-glow" style="background: radial-gradient(circle, rgba(74,124,89,0.7) 0%, transparent 70%);"></div>
             <img
               class="product-img"
-              src="assets/images/mockups/A02-hero-moringa.png"
+              src="assets/images/cutouts/A02-hero-moringa_cutout.png"
               alt="Moringa — Africa's Miracle Tree"
               loading="lazy"
               onerror="this.style.opacity='0.3'"
@@ -1611,7 +1708,7 @@
             <div class="product-img-glow" style="background: radial-gradient(circle, rgba(139,106,62,0.7) 0%, transparent 70%);"></div>
             <img
               class="product-img"
-              src="assets/images/mockups/A03-hero-blackseed.png"
+              src="assets/images/cutouts/A03-hero-blackseed_cutout.png"
               alt="Black Seed — Prophetic Medicine"
               loading="lazy"
               onerror="this.style.opacity='0.3'"
@@ -1641,7 +1738,7 @@
             <div class="product-img-glow" style="background: radial-gradient(circle, rgba(123,78,45,0.7) 0%, transparent 70%);"></div>
             <img
               class="product-img"
-              src="assets/images/mockups/A04-hero-molasses-bottle.png"
+              src="assets/images/cutouts/A04-hero-molasses-bottle_cutout.png"
               alt="Black Molasses — What Refining Removes"
               loading="lazy"
               onerror="this.style.opacity='0.3'"
@@ -2143,6 +2240,81 @@
     counters.forEach(c => countObserver.observe(c));
 
   })();
+
+  /* ─── 12. 3D HERO CAROUSEL (billboard — always face-forward) ──── */
+  (function() {
+    const ring = document.getElementById('carouselRing');
+    if (!ring) return;
+    const items = Array.from(ring.querySelectorAll('.carousel-item'));
+    const dots  = Array.from(document.querySelectorAll('#carouselDots .carousel-dot'));
+    const N = items.length; // 4 products
+    const STEP = 360 / N;  // 90° per item
+    let current = 0;
+    let autoTimer = null;
+
+    function getRadius() {
+      const w = window.innerWidth;
+      if (w < 480) return 120;
+      if (w < 960) return 190;
+      return 290;
+    }
+
+    /* Billboard: ring rotates, each item counter-rotates to ALWAYS face camera.
+       Both ring and items share the SAME transition duration so they stay in sync.
+       Net world orientation = ringAngle + itemBase + counter = 0 — always front-facing.
+       CSS scale on data-pos adds extra depth drama (front item biggest, back smallest). */
+    function renderFrame() {
+      const r = getRadius();
+      const ringAngle = -current * STEP;
+      ring.style.transform = `rotateY(${ringAngle}deg)`;
+
+      items.forEach((item, i) => {
+        const itemBase = i * STEP;
+        const counter  = -ringAngle - itemBase; // = current*STEP - i*STEP
+        item.style.transform = `rotateY(${itemBase}deg) translateZ(${r}px) rotateY(${counter}deg)`;
+
+        // Depth position: 0=front, 1=sides, 2=back
+        const diff = ((i - current) % N + N) % N;
+        const pos  = Math.min(diff, N - diff);
+        item.setAttribute('data-pos', pos);
+      });
+
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    function goTo(idx) {
+      current = ((idx % N) + N) % N;
+      renderFrame();
+    }
+
+    function next() { goTo(current + 1); }
+
+    function startAuto() {
+      clearInterval(autoTimer);
+      // 2500ms: fast enough for drama, slow enough to see each product
+      autoTimer = setInterval(next, 2500);
+    }
+
+    renderFrame();
+    startAuto();
+    window.addEventListener('resize', renderFrame);
+
+    const carousel = document.getElementById('heroCarousel');
+    // Click advances manually but auto-rotation never pauses
+    carousel.addEventListener('click', () => { next(); startAuto(); });
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', (e) => { e.stopPropagation(); goTo(i); startAuto(); });
+    });
+
+    let tx = 0;
+    carousel.addEventListener('touchstart', (e) => { tx = e.touches[0].clientX; }, { passive: true });
+    carousel.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - tx;
+      if (Math.abs(dx) > 40) { dx < 0 ? goTo(current + 1) : goTo(current - 1); startAuto(); }
+    }, { passive: true });
+  })();
+
   </script>
 
   <!-- Custom cursor -->
