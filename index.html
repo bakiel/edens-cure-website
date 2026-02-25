@@ -457,6 +457,7 @@
       /* CRITICAL: match ring transition so counter-rotation stays in sync — product always faces front */
       transition: transform 0.72s cubic-bezier(0.23, 1, 0.32, 1);
     }
+    .carousel-item picture { display: contents; }
     .carousel-item img {
       width: auto;
       max-width: 88%;
@@ -1539,16 +1540,28 @@
         <div class="hero-carousel" id="heroCarousel" aria-label="Product showcase" role="region">
           <div class="carousel-ring" id="carouselRing">
             <div class="carousel-item">
-              <img src="assets/images/cutouts/A01-hero-back-to-eden_cutout.png" alt="Back to Eden Powder" loading="eager" draggable="false">
+              <picture>
+                <source srcset="assets/images/cutouts-webp/A01-hero-back-to-eden_cutout.webp" type="image/webp">
+                <img src="assets/images/cutouts-opt/A01-hero-back-to-eden_cutout.png" alt="Back to Eden Powder" loading="eager" draggable="false">
+              </picture>
             </div>
             <div class="carousel-item">
-              <img src="assets/images/cutouts/A02-hero-moringa_cutout.png" alt="Moringa Powder" loading="eager" draggable="false">
+              <picture>
+                <source srcset="assets/images/cutouts-webp/A02-hero-moringa_cutout.webp" type="image/webp">
+                <img src="assets/images/cutouts-opt/A02-hero-moringa_cutout.png" alt="Moringa Powder" loading="eager" draggable="false">
+              </picture>
             </div>
             <div class="carousel-item">
-              <img src="assets/images/cutouts/A03-hero-blackseed_cutout.png" alt="Black Seed" loading="lazy" draggable="false">
+              <picture>
+                <source srcset="assets/images/cutouts-webp/A03-hero-blackseed_cutout.webp" type="image/webp">
+                <img src="assets/images/cutouts-opt/A03-hero-blackseed_cutout.png" alt="Black Seed" loading="lazy" draggable="false">
+              </picture>
             </div>
             <div class="carousel-item">
-              <img src="assets/images/cutouts/A04-hero-molasses-bottle_cutout.png" alt="Black Molasses" loading="lazy" draggable="false">
+              <picture>
+                <source srcset="assets/images/cutouts-webp/A04-hero-molasses-bottle_cutout.webp" type="image/webp">
+                <img src="assets/images/cutouts-opt/A04-hero-molasses-bottle_cutout.png" alt="Black Molasses" loading="lazy" draggable="false">
+              </picture>
             </div>
           </div>
           <div class="carousel-dots" id="carouselDots">
